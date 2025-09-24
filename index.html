@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Profile + Navigation Sidebar/Header -->
+  <header>
+  <div class="profile-info">
+    <div class="profile-pic">
+      <img src="drawing-shoot.svg" alt="My Profile Picture">
+    </div>
+    <div class="profile-text">
+      <h1>Collins Lukhale Mupalia</h1>
+      <p class="tagline">Web Developer | Student | Designer</p>
+    </div>
+  </div>
+
+  <!-- Hamburger Button (visible on mobile) -->
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Download CV Button -->
+  <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
+</header>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a role, student and professional.  
+    I enjoy working on website development and building creative projects.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Web Development</div>
+      <div class="skill-card">Programming</div>
+      <div class="skill-card">Design</div>
+      <div class="skill-card">Database Management</div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container">
+    <h2>My Projects</h2>
+    <div class="portfolio-grid">
+      <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
+        <h3>Portfolio Website</h3>
+        <img src="20250924_151453.jpg" alt="Portfolio Website Screenshot">
+        <p>A personal portfolio site built with HTML, CSS, and JavaScript.</p>
+      </a>
+
+      <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
+        <h3>School Management System</h3>
+        <img src="20250924_151534.jpg" alt="School Management System Screenshot">
+        <p>A web-based system for managing students and teachers.</p>
+      </a>
+
+      <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
+        <h3>Hotel Booking App</h3>
+        <img src="20250924_151538.jpg" alt="Hotel Booking App Screenshot">
+        <p>A simple booking system with PHP and MySQL.</p>
+      </a>
+    </div>
+
+    <!-- Example Modal -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <img src="project2.jpg" alt="School Management System Full">
+        <h2>School Management System</h2>
+        <p>A web-based system for managing students and teachers. Built with PHP, MySQL, and Bootstrap.</p>
+        <a href="https://github.com/yourusername/project2" target="_blank" class="btn-link">View on GitHub</a>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <img src="project3.jpg" alt="Hotel Booking App Full">
+        <h2>Hotel Booking App</h2>
+        <p>This app allows users to search and book hotel rooms. Built using PHP, MySQL, and JavaScript.</p>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn-link">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
+    <p>Phone: +254703715677</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Collins Mupalia. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/collinsmupalia123-png" target="_blank">
+        <img src="icons8-github-logo-94.png" alt="GitHub">
+      </a>
+      <a href="https://twitter.com/collins1046447" target="_blank">
+        <img src="icons8-x-50.png" alt="Twitter">
+      </a>
+      <a href="https://instagram.com/collinsmupalia" target="_blank">
+        <img src="icons8-instagram-logo-94.png" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+  <script>
+  function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+  }
+</script>
+
+
+</body>
+</html>
