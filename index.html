@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Portfolio – Collins Mupalia</title>
-<meta name="description" content="Explore my web development projects and coding portfolio.">
-
-  <meta name="google-site-verification" content="99zftuHoow8Cy59sC26m8j8RdCvWxAjKJiqhs4GPhtw" />
+  <!-- Primary Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <title>My Portfolio – Collins Mupalia</title>
+  <meta name="description" content="Welcome to the portfolio of Collins Lukhale Mupalia, a web developer, student, and designer. Explore my projects in web development, UI/UX design, programming, and database management.">
+
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="99zftuHoow8Cy59sC26m8j8RdCvWxAjKJiqhs4GPhtw" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://collinsmupalia123-png.github.io/my-portfolio-/">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="My Portfolio – Collins Mupalia">
+  <meta property="og:description" content="Explore the portfolio of Collins Lukhale Mupalia. Web development, UI/UX design, and coding projects.">
+  <meta property="og:url" content="https://collinsmupalia123-png.github.io/my-portfolio-/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="drawing-shoot.svg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Portfolio – Collins Mupalia">
+  <meta name="twitter:description" content="Explore the portfolio of Collins Lukhale Mupalia. Web development, UI/UX design, and coding projects.">
+  <meta name="twitter:image" content="drawing-shoot.svg">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-  <!-- Profile + Navigation Sidebar/Header -->
+  <!-- Header / Profile -->
   <header>
-  <div class="profile-info">
-    <div class="profile-pic">
-      <img src="drawing-shoot.svg" alt="My Profile Picture">
+    <div class="profile-info">
+      <div class="profile-pic">
+        <img src="drawing-shoot.svg" alt="Profile Picture of Collins Lukhale Mupalia">
+      </div>
+      <div class="profile-text">
+        <h1>Collins Lukhale Mupalia</h1>
+        <p class="tagline">Web Developer | Student | Designer</p>
+      </div>
     </div>
-    <div class="profile-text">
-      <h1>Collins Lukhale Mupalia</h1>
-      <p class="tagline">Web Developer | Student | Designer</p>
-    </div>
-  </div>
 
-  <!-- Hamburger Button (visible on mobile) -->
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <!-- Hamburger Menu (Mobile) -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- Download CV Button -->
-  <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
-</header>
+    <!-- CV Download -->
+    <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
+  </header>
 
   <!-- About Section -->
   <section id="about" class="container">
     <h2>About Me</h2>
-    <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a role, student and professional.  
+    <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a web developer, student, and designer.  
     I enjoy working on website development and building creative projects.</p>
   </section>
 
@@ -65,19 +83,19 @@
     <div class="portfolio-grid">
       <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
         <h3>Portfolio Website</h3>
-        <img src="20250924_151453.jpg" alt="Portfolio Website Screenshot">
+        <img src="20250924_151453.jpg" alt="Screenshot of Portfolio Website">
         <p>A personal portfolio site built with HTML, CSS, and JavaScript.</p>
       </a>
 
       <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
         <h3>School Management System</h3>
-        <img src="20250924_151534.jpg" alt="School Management System Screenshot">
+        <img src="20250924_151534.jpg" alt="Screenshot of School Management System">
         <p>A web-based system for managing students and teachers.</p>
       </a>
 
       <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
         <h3>Hotel Booking App</h3>
-        <img src="20250924_151538.jpg" alt="Hotel Booking App Screenshot">
+        <img src="20250924_151538.jpg" alt="Screenshot of Hotel Booking App">
         <p>A simple booking system with PHP and MySQL.</p>
       </a>
     </div>
@@ -86,7 +104,7 @@
     <div id="modal2" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <img src="project2.jpg" alt="School Management System Full">
+        <img src="project2.jpg" alt="Full preview of School Management System">
         <h2>School Management System</h2>
         <p>A web-based system for managing students and teachers. Built with PHP, MySQL, and Bootstrap.</p>
         <a href="https://github.com/yourusername/project2" target="_blank" class="btn-link">View on GitHub</a>
@@ -96,7 +114,7 @@
     <div id="modal3" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <img src="project3.jpg" alt="Hotel Booking App Full">
+        <img src="project3.jpg" alt="Full preview of Hotel Booking App">
         <h2>Hotel Booking App</h2>
         <p>This app allows users to search and book hotel rooms. Built using PHP, MySQL, and JavaScript.</p>
         <a href="https://github.com/yourusername/project3" target="_blank" class="btn-link">View on GitHub</a>
@@ -116,28 +134,25 @@
     <p>&copy; 2025 Collins Mupalia. All rights reserved.</p>
     <div class="social-links">
       <a href="https://github.com/collinsmupalia123-png" target="_blank">
-        <img src="icons8-github-logo-94.png" alt="GitHub">
+        <img src="icons8-github-logo-94.png" alt="GitHub Logo">
       </a>
       <a href="https://twitter.com/collins1046447" target="_blank">
-        <img src="icons8-x-50.png" alt="Twitter">
+        <img src="icons8-x-50.png" alt="Twitter Logo">
       </a>
       <a href="https://instagram.com/collinsmupalia" target="_blank">
-        <img src="icons8-instagram-logo-94.png" alt="Instagram">
+        <img src="icons8-instagram-logo-94.png" alt="Instagram Logo">
       </a>
     </div>
   </footer>
+
+  <!-- Script -->
   <script>
-  function toggleMenu() {
-    document.getElementById("navbar").classList.toggle("active");
-  }
-</script>
-
-
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
