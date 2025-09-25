@@ -186,8 +186,30 @@
       document.getElementById(id).style.display = "none";
     }
   </script>
+  <script>
+  function animateSkills() {
+    const skills = document.querySelectorAll('.progress-bar span');
+    skills.forEach(skill => {
+      const width = skill.getAttribute('data-width');
+      skill.style.width = width;
+    });
+  }
+
+  // Trigger animation when skills section is visible
+  window.addEventListener('scroll', () => {
+    const skillsSection = document.getElementById('skills');
+    const sectionPosition = skillsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if (sectionPosition < screenPosition) {
+      animateSkills();
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
