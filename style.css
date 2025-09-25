@@ -206,12 +206,149 @@ h2::after {
 </section>
 
 
+<!-- Skills Section -->
+<section id="skills" class="container">
+  <h2>My Skills</h2>
+  <div class="skills-wrapper">
+
+    <div class="skill">
+      <p>Web Development</p>
+      <div class="progress-bar">
+        <span style="width: 90%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Programming</p>
+      <div class="progress-bar">
+        <span style="width: 85%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Design</p>
+      <div class="progress-bar">
+        <span style="width: 80%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Software Development</p>
+      <div class="progress-bar">
+        <span style="width: 75%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Data Analysis</p>
+      <div class="progress-bar">
+        <span style="width: 70%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Networking</p>
+      <div class="progress-bar">
+        <span style="width: 65%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Computer Architecture</p>
+      <div class="progress-bar">
+        <span style="width: 60%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Machine Learning</p>
+      <div class="progress-bar">
+        <span style="width: 50%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Technical Writing</p>
+      <div class="progress-bar">
+        <span style="width: 75%"></span>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p>Creativity</p>
+      <div class="progress-bar">
+        <span style="width: 95%"></span>
+      </div>
+    </div>
+
 /* Skills Section */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+.skills-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+/* Skills Section */
+.skills-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
+  border-radius: 8px;
+  width: 0; /* start empty */
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
+  border-radius: 8px;
+  transition: width 1s ease-in-out;
+}
+
+  </div>
+</section>
 
 .skill-card {
   background: #fff;
@@ -321,4 +458,5 @@ footer {
     display: none;
   }
 }
+
 
