@@ -149,6 +149,44 @@ h2::after {
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   line-height: 1.7;
 }
+.about-section {
+  padding: 50px 80px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-left, .about-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-left {
+  border-right: 2px solid #00bcd4;
+  padding-right: 20px;
+}
+
+.about-right {
+  padding-left: 20px;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-right h3 {
+  color: #333;
+  border-bottom: 2px solid #00bcd4;
+  display: inline-block;
+  margin-top: 15px;
+}
 
 .about-text p {
   font-size: 1.1rem;
@@ -458,5 +496,6 @@ footer {
     display: none;
   }
 }
+
 
 
