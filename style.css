@@ -10,6 +10,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+section {
+  width: 100%;
+  display: block;
+}
+
 /* PROJECT GRID */
 .portfolio-grid {
   display: grid;
@@ -1037,6 +1042,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
