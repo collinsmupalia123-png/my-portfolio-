@@ -15,6 +15,53 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
+.about-section {
+  background: #fff;
+  padding: 70px 10%;
+}
+html {
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+Optional JS animation (lightweight):
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  document.querySelectorAll('section').forEach(sec => {
+    sec.classList.add('hidden');
+    observer.observe(sec);
+  });
+</script>
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 .portfolio-card {
   background: #fff;
@@ -761,6 +808,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
