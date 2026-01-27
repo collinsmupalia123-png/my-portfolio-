@@ -1,524 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <!-- Primary Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio – Collins Mupalia</title>
-  <meta name="description" content="Welcome to the portfolio of Collins Lukhale Mupalia, a web developer, student, and designer. Explore my projects in web development, UI/UX design, programming, and database management.">
-
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="99zftuHoow8Cy59sC26m8j8RdCvWxAjKJiqhs4GPhtw" />
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://collinsmupalia123-png.github.io/my-portfolio-/">
-
-  <!-- Open Graph (Facebook, LinkedIn) -->
-  <meta property="og:title" content="My Portfolio – Collins Mupalia">
-  <meta property="og:description" content="Explore the portfolio of Collins Lukhale Mupalia. Web development, UI/UX design, and coding projects.">
-  <meta property="og:url" content="https://collinsmupalia123-png.github.io/my-portfolio-/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="drawing-shoot.svg">
-
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="My Portfolio – Collins Mupalia">
-  <meta name="twitter:description" content="Explore the portfolio of Collins Lukhale Mupalia. Web development, UI/UX design, and coding projects.">
-  <meta name="twitter:image" content="drawing-shoot.svg">
-
-  <!-- Styles -->
+  <title>Collins Mupalia Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Profile -->
+
+  <!-- HEADER -->
   <header>
-    <div class="profile-info">
-      <div class="profile-pic">
-        <img src="drawing-shoot.svg" alt="Profile Picture of Collins Lukhale Mupalia">
-      </div>
-      <div class="profile-text">
-        <h1>Collins Lukhale Mupalia</h1>
-        <p class="tagline">Web Developer | Student | Designer</p>
-      </div>
-    </div>
+    <img src="drawing-shoot.svg" alt="Collins Mupalia">
+    <h1>Collins Lukhale Mupalia</h1>
+    <p>Web Developer | Student | Designer</p>
 
-    <!-- Hamburger Menu (Mobile) -->
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-      <ul class="nav-links">
+    <nav>
+      <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- CV Download -->
-    <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
   </header>
 
-  <section id="about" class="about-section">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <!-- Left Side -->
-    <div class="about-left">
-      <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a web developer, student, and designer. I enjoy working on website development and building creative projects.</p>
-      <p>A web developer, student, and designer based in Kenya. I am actively building an online presence and putting effort into shaping my personal brand.</p>
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <div class="about-container">
+      <div class="about-left">
+        <p>Hello! I am <strong>Collins Mupalia</strong>, a web developer, student, and designer.</p>
+        <p>I create websites, UI/UX designs, and database projects with care and detail.</p>
+      </div>
+      <div class="about-right">
+        <h3>Technical Skills</h3>
+        <p>HTML, CSS, JavaScript, PHP, MySQL, UI/UX Design, Database Management.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Right Side -->
-    <div class="about-right">
-      <h3>Technical Interests & Skills</h3>
-      <p>I am skilled/interested in web development (HTML, CSS, JavaScript, PHP, MySQL).</p>
-      <p>Am comfortable with UI/UX design and creating portfolio projects that showcase your work.</p>
-      <p>Am familiar with database management and basic backend systems.</p>
-
-      <h3>Others</h3>
-      <p>Detail-oriented → I refine code carefully (SEO tags, structured data, accessibility).</p>
-      <p>Persistent learner → I ask follow-up questions until I understand.</p>
-      <p>Career-driven → Am building a portfolio to attract opportunities.</p>
-      <p>Hands-on → I test changes on your live site and care about results.</p>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Skills Section -->
+  <!-- SKILLS -->
   <section id="skills" class="container">
-    <h2>My Skills</h2>
+    <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">Web Development</div>
       <div class="skill-card">Programming</div>
-      <div class="skill-card">Design</div>
-      <div class="skill-card">Software development </div>
-      <div class="skill-card">Data analysis </div>
+      <div class="skill-card">UI/UX Design</div>
+      <div class="skill-card">Database Management</div>
+      <div class="skill-card">Software Development</div>
       <div class="skill-card">Networking</div>
-      <div class="skill-card">Computer architecture</div>
-      <div class="skill-card">Machine learning </div>
-      <div class="skill-card">Technical writing </div>
-      <div class="skill-card">Creativity</div> 
-      
     </div>
   </section>
 
-  <!-- Portfolio Section -->
+  <!-- PORTFOLIO -->
   <section id="portfolio" class="container">
-    <h2>My Projects</h2>
-    <section id="portfolio" class="container">
-  <h2>My Projects</h2>
-
-  <div class="portfolio-grid">
-
-    <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/portfolio-site.png" alt="Portfolio Website" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>Portfolio Website</h3>
-        <p>A clean personal portfolio site built with HTML, CSS & JavaScript.</p>
-      </div>
-    </a>
-
-    <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/school-system.png" alt="School Management System" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>School Management System</h3>
-        <p>A responsive system managing students and teachers.</p>
-      </div>
-    </a>
-
-    <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/hotel-booking.png" alt="Hotel Booking App" loading="lazy">
-      </div>
-      <div class="project-content">
-        <h3>Hotel Booking App</h3>
-        <p>A hotel booking system using PHP & MySQL.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-    <section id="portfolio" class="container">
-  <h2>My Projects</h2>
-
-  <div class="portfolio-grid">
-
-    <!-- Project 1 -->
-    <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/portfolio-site.png" alt="Portfolio Website" loading="lazy">
-      </div>
-
-      <div class="project-content">
-        <h3>Portfolio Website</h3>
-        <p class="project-desc">
-          A modern personal portfolio showcasing skills, projects, and contact details.
-        </p>
-
-        <div class="project-tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-        </div>
-
-        <span class="view-project">View Project →</span>
-      </div>
-    </a>
-
-    <!-- Project 2 -->
-    <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/school-system.png" alt="School Management System" loading="lazy">
-      </div>
-
-      <div class="project-content">
-        <h3>School Management System</h3>
-        <p class="project-desc">
-          A responsive system for managing student records, classes, and staff.
-        </p>
-
-        <div class="project-tags">
-          <span>PHP</span>
-          <span>MySQL</span>
-          <span>Bootstrap</span>
-        </div>
-
-        <span class="view-project">View Project →</span>
-      </div>
-    </a>
-
-    <!-- Project 3 -->
-    <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
-      <div class="project-image">
-        <img src="images/hotel-booking.png" alt="Hotel Booking App" loading="lazy">
-      </div>
-
-      <div class="project-content">
-        <h3>Hotel Booking App</h3>
-        <p class="project-desc">
-          A simple hotel room booking system with search and reservation features.
-        </p>
-
-        <div class="project-tags">
-          <span>PHP</span>
-          <span>MySQL</span>
-          <span>JavaScript</span>
-        </div>
-
-        <span class="view-project">View Project →</span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
+    <h2>Projects</h2>
     <div class="portfolio-grid">
-      <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
-        <h3>Portfolio Website</h3>
-        <img src="20250924_151453.jpg" alt="Screenshot of Portfolio Website">
-        <p>A personal portfolio site built with HTML, CSS, and JavaScript.</p>
-      </a>
-       details.
-    </p>
-
-    <div class="project-tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-    </div>
-
-    <div class="project-links">
-      <span class="view-project">View Project →</span>
-    </div>
-  </div>
-</a>
-    <div class="project-overlay">
-  <span>View Details</span>
-</div>
-
-      <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
-        <h3>School Management System</h3>
-        <img src="20250924_151534.jpg" alt="Screenshot of School Management System">
-        <p>A web-based system for managing students and teachers.</p>
+      <a href="#" class="portfolio-card">
+        <div class="project-image">
+          <img src="images/portfolio-site.png" alt="Portfolio Website">
+        </div>
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>My personal portfolio showcasing web development projects.</p>
+        </div>
       </a>
 
-      <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
-        <h3>Hotel Booking App</h3>
-        <img src="20250924_151538.jpg" alt="Screenshot of Hotel Booking App">
-        <p>A simple booking system with PHP and MySQL.</p>
+      <a href="#" class="portfolio-card">
+        <div class="project-image">
+          <img src="images/school-system.png" alt="School Management System">
+        </div>
+        <div class="project-content">
+          <h3>School Management System</h3>
+          <p>Manage students, teachers, and classes using PHP & MySQL.</p>
+        </div>
       </a>
-    </div>
 
-    <!-- Example Modal -->
-    <div id="modal2" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <img src="project2.jpg" alt="Full preview of School Management System">
-        <h2>School Management System</h2>
-        <p>A web-based system for managing students and teachers. Built with PHP, MySQL, and Bootstrap.</p>
-        <a href="https://github.com/yourusername/project2" target="_blank" class="btn-link">View on GitHub</a>
-      </div>
-    </div>
-
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <img src="project3.jpg" alt="Full preview of Hotel Booking App">
-        <h2>Hotel Booking App</h2>
-        <p>This app allows users to search and book hotel rooms. Built using PHP, MySQL, and JavaScript.</p>
-        <a href="https://github.com/yourusername/project3" target="_blank" class="btn-link">View on GitHub</a>
-      </div>
+      <a href="#" class="portfolio-card">
+        <div class="project-image">
+          <img src="images/hotel-booking.png" alt="Hotel Booking App">
+        </div>
+        <div class="project-content">
+          <h3>Hotel Booking App</h3>
+          <p>A small hotel booking system built with PHP and MySQL.</p>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- CONTACT -->
   <section id="contact" class="container">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
     <p>Phone: +254703715677</p>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Collins Mupalia. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://github.com/collinsmupalia123-png" target="_blank">
-        <img src="icons8-github-logo-94.png" alt="GitHub Logo">
-      </a>
-      <a href="https://twitter.com/collins1046447" target="_blank">
-        <img src="icons8-x-50.png" alt="Twitter Logo">
-      </a>
-      <a href="https://instagram.com/collinsmupalia" target="_blank">
-        <img src="icons8-instagram-logo-94.png" alt="Instagram Logo">
-      </a>
-    </div>
+    <p>&copy; 2026 Collins Mupalia</p>
   </footer>
-
-  <!-- Script -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
-  <script>
-  function animateSkills() {
-    const skills = document.querySelectorAll('.progress-bar span');
-    skills.forEach(skill => {
-      const width = skill.getAttribute('data-width');
-      skill.style.width = width;
-    });
-  }
-
-  // Trigger animation when skills section is visible
-  window.addEventListener('scroll', () => {
-    const skillsSection = document.getElementById('skills');
-    const sectionPosition = skillsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-
-    if (sectionPosition < screenPosition) {
-      animateSkills();
-    }
-  });
-</script>
 
 </body>
 </html>
-
-
-
-
-
-<body>
-  <!-- Header / Profile -->
-  <header>
-    <div class="profile-info">
-      <div class="profile-pic">
-        <img src="drawing-shoot.svg" alt="Profile Picture of Collins Lukhale Mupalia">
-      </div>
-      <div class="profile-text">
-        <h1>Collins Lukhale Mupalia</h1>
-        <p class="tagline">Web Developer | Student | Designer</p>
-      </div>
-    </div>
-
-    <!-- Hamburger Menu (Mobile) -->
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- CV Download -->
-    <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
-  </header>
-
-  <section id="about" class="about-section">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <!-- Left Side -->
-    <div class="about-left">
-      <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a web developer, student, and designer. I enjoy working on website development and building creative projects.</p>
-      <p>A web developer, student, and designer based in Kenya. I am actively building an online presence and putting effort into shaping my personal brand.</p>
-    </div>
-
-    <!-- Right Side -->
-    <div class="about-right">
-      <h3>Technical Interests & Skills</h3>
-      <p>I am skilled/interested in web development (HTML, CSS, JavaScript, PHP, MySQL).</p>
-      <p>Am comfortable with UI/UX design and creating portfolio projects that showcase your work.</p>
-      <p>Am familiar with database management and basic backend systems.</p>
-
-      <h3>Others</h3>
-      <p>Detail-oriented → I refine code carefully (SEO tags, structured data, accessibility).</p>
-      <p>Persistent learner → I ask follow-up questions until I understand.</p>
-      <p>Career-driven → Am building a portfolio to attract opportunities.</p>
-      <p>Hands-on → I test changes on your live site and care about results.</p>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Skills Section -->
-  <section id="skills" class="container">
-    <h2>My Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Web Development</div>
-      <div class="skill-card">Programming</div>
-      <div class="skill-card">Design</div>
-      <div class="skill-card">Software development </div>
-      <div class="skill-card">Data analysis </div>
-      <div class="skill-card">Networking</div>
-      <div class="skill-card">Computer architecture</div>
-      <div class="skill-card">Machine learning </div>
-      <div class="skill-card">Technical writing </div>
-      <div class="skill-card">Creativity</div> 
-      
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="container">
-    <h2>My Projects</h2>
-    <div class="portfolio-grid">
-      <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
-        <h3>Portfolio Website</h3>
-        <img src="20250924_151453.jpg" alt="Screenshot of Portfolio Website">
-        <p>A personal portfolio site built with HTML, CSS, and JavaScript.</p>
-      </a>
-
-      <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
-        <h3>School Management System</h3>
-        <img src="20250924_151534.jpg" alt="Screenshot of School Management System">
-        <p>A web-based system for managing students and teachers.</p>
-      </a>
-
-      <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
-        <h3>Hotel Booking App</h3>
-        <img src="20250924_151538.jpg" alt="Screenshot of Hotel Booking App">
-        <p>A simple booking system with PHP and MySQL.</p>
-      </a>
-    </div>
-
-    <!-- Example Modal -->
-    <div id="modal2" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <img src="project2.jpg" alt="Full preview of School Management System">
-        <h2>School Management System</h2>
-        <p>A web-based system for managing students and teachers. Built with PHP, MySQL, and Bootstrap.</p>
-        <a href="https://github.com/yourusername/project2" target="_blank" class="btn-link">View on GitHub</a>
-      </div>
-    </div>
-
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <img src="project3.jpg" alt="Full preview of Hotel Booking App">
-        <h2>Hotel Booking App</h2>
-        <p>This app allows users to search and book hotel rooms. Built using PHP, MySQL, and JavaScript.</p>
-        <a href="https://github.com/yourusername/project3" target="_blank" class="btn-link">View on GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="container">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
-    <p>Phone: +254703715677</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Collins Mupalia. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://github.com/collinsmupalia123-png" target="_blank">
-        <img src="icons8-github-logo-94.png" alt="GitHub Logo">
-      </a>
-      <a href="https://twitter.com/collins1046447" target="_blank">
-        <img src="icons8-x-50.png" alt="Twitter Logo">
-      </a>
-      <a href="https://instagram.com/collinsmupalia" target="_blank">
-        <img src="icons8-instagram-logo-94.png" alt="Instagram Logo">
-      </a>
-    </div>
-  </footer>
-
-  <!-- Script -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-  </script>
-  <script>
-  function animateSkills() {
-    const skills = document.querySelectorAll('.progress-bar span');
-    skills.forEach(skill => {
-      const width = skill.getAttribute('data-width');
-      skill.style.width = width;
-    });
-  }
-
-  // Trigger animation when skills section is visible
-  window.addEventListener('scroll', () => {
-    const skillsSection = document.getElementById('skills');
-    const sectionPosition = skillsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-
-    if (sectionPosition < screenPosition) {
-      animateSkills();
-    }
-  });
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
