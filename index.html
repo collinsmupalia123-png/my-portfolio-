@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <!-- Primary Meta -->
   <meta charset="UTF-8">
@@ -203,6 +205,186 @@
 
 </body>
 </html>
+
+
+
+
+
+<body>
+  <!-- Header / Profile -->
+  <header>
+    <div class="profile-info">
+      <div class="profile-pic">
+        <img src="drawing-shoot.svg" alt="Profile Picture of Collins Lukhale Mupalia">
+      </div>
+      <div class="profile-text">
+        <h1>Collins Lukhale Mupalia</h1>
+        <p class="tagline">Web Developer | Student | Designer</p>
+      </div>
+    </div>
+
+    <!-- Hamburger Menu (Mobile) -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CV Download -->
+    <a href="cv.pdf" download class="btn-cv">📄 Download CV</a>
+  </header>
+
+  <section id="about" class="about-section">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <!-- Left Side -->
+    <div class="about-left">
+      <p>Hello! My name is <strong>COLLINS LUKHALE MUPALIA</strong>. I am a web developer, student, and designer. I enjoy working on website development and building creative projects.</p>
+      <p>A web developer, student, and designer based in Kenya. I am actively building an online presence and putting effort into shaping my personal brand.</p>
+    </div>
+
+    <!-- Right Side -->
+    <div class="about-right">
+      <h3>Technical Interests & Skills</h3>
+      <p>I am skilled/interested in web development (HTML, CSS, JavaScript, PHP, MySQL).</p>
+      <p>Am comfortable with UI/UX design and creating portfolio projects that showcase your work.</p>
+      <p>Am familiar with database management and basic backend systems.</p>
+
+      <h3>Others</h3>
+      <p>Detail-oriented → I refine code carefully (SEO tags, structured data, accessibility).</p>
+      <p>Persistent learner → I ask follow-up questions until I understand.</p>
+      <p>Career-driven → Am building a portfolio to attract opportunities.</p>
+      <p>Hands-on → I test changes on your live site and care about results.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="container">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Web Development</div>
+      <div class="skill-card">Programming</div>
+      <div class="skill-card">Design</div>
+      <div class="skill-card">Software development </div>
+      <div class="skill-card">Data analysis </div>
+      <div class="skill-card">Networking</div>
+      <div class="skill-card">Computer architecture</div>
+      <div class="skill-card">Machine learning </div>
+      <div class="skill-card">Technical writing </div>
+      <div class="skill-card">Creativity</div> 
+      
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container">
+    <h2>My Projects</h2>
+    <div class="portfolio-grid">
+      <a href="https://github.com/yourusername/project1" target="_blank" class="portfolio-card">
+        <h3>Portfolio Website</h3>
+        <img src="20250924_151453.jpg" alt="Screenshot of Portfolio Website">
+        <p>A personal portfolio site built with HTML, CSS, and JavaScript.</p>
+      </a>
+
+      <a href="https://github.com/yourusername/project2" target="_blank" class="portfolio-card">
+        <h3>School Management System</h3>
+        <img src="20250924_151534.jpg" alt="Screenshot of School Management System">
+        <p>A web-based system for managing students and teachers.</p>
+      </a>
+
+      <a href="https://github.com/yourusername/project3" target="_blank" class="portfolio-card">
+        <h3>Hotel Booking App</h3>
+        <img src="20250924_151538.jpg" alt="Screenshot of Hotel Booking App">
+        <p>A simple booking system with PHP and MySQL.</p>
+      </a>
+    </div>
+
+    <!-- Example Modal -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <img src="project2.jpg" alt="Full preview of School Management System">
+        <h2>School Management System</h2>
+        <p>A web-based system for managing students and teachers. Built with PHP, MySQL, and Bootstrap.</p>
+        <a href="https://github.com/yourusername/project2" target="_blank" class="btn-link">View on GitHub</a>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <img src="project3.jpg" alt="Full preview of Hotel Booking App">
+        <h2>Hotel Booking App</h2>
+        <p>This app allows users to search and book hotel rooms. Built using PHP, MySQL, and JavaScript.</p>
+        <a href="https://github.com/yourusername/project3" target="_blank" class="btn-link">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
+    <p>Phone: +254703715677</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Collins Mupalia. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/collinsmupalia123-png" target="_blank">
+        <img src="icons8-github-logo-94.png" alt="GitHub Logo">
+      </a>
+      <a href="https://twitter.com/collins1046447" target="_blank">
+        <img src="icons8-x-50.png" alt="Twitter Logo">
+      </a>
+      <a href="https://instagram.com/collinsmupalia" target="_blank">
+        <img src="icons8-instagram-logo-94.png" alt="Instagram Logo">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+  <script>
+  function animateSkills() {
+    const skills = document.querySelectorAll('.progress-bar span');
+    skills.forEach(skill => {
+      const width = skill.getAttribute('data-width');
+      skill.style.width = width;
+    });
+  }
+
+  // Trigger animation when skills section is visible
+  window.addEventListener('scroll', () => {
+    const skillsSection = document.getElementById('skills');
+    const sectionPosition = skillsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+
+    if (sectionPosition < screenPosition) {
+      animateSkills();
+    }
+  });
+</script>
+
+</body>
+</html>
+
 
 
 
