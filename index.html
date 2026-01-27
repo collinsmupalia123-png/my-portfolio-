@@ -1,103 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collins Mupalia Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collins Mupalia | Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="drawing-shoot.svg" alt="Collins Mupalia">
-    <h1>Collins Lukhale Mupalia</h1>
-    <p>Web Developer | Student | Designer</p>
+<!-- HERO -->
+<header class="hero">
+  <img src="drawing-shoot.svg" alt="Collins Mupalia" />
+  <h1>Collins Lukhale Mupalia</h1>
+  <p>Web Developer • UI/UX Enthusiast • Computer Science Student</p>
 
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="hero-buttons">
+    <a href="#portfolio" class="btn-primary">View Projects</a>
+    <a href="cv.pdf" class="btn-outline" download>Download CV</a>
+  </div>
+</header>
 
-  <!-- ABOUT -->
-  <section id="about" class="container">
-    <div class="about-container">
-      <div class="about-left">
-        <p>Hello! I am <strong>Collins Mupalia</strong>, a web developer, student, and designer.</p>
-        <p>I create websites, UI/UX designs, and database projects with care and detail.</p>
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Me</h2>
+  <p class="center-text">
+    I am a passionate web developer based in Kenya, focused on building
+    clean, responsive, and user-friendly digital products. I enjoy turning
+    ideas into real-world applications using modern web technologies.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section class="section bg-light">
+  <h2>Core Skills</h2>
+  <div class="skills-grid">
+    <span>HTML & CSS</span>
+    <span>JavaScript</span>
+    <span>PHP & MySQL</span>
+    <span>UI / UX Design</span>
+    <span>Database Systems</span>
+    <span>Software Development</span>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <h2>Selected Projects</h2>
+
+  <div class="portfolio-grid">
+
+    <div class="project-card">
+      <img src="20250924_151453.jpg" alt="Portfolio Website">
+      <div class="project-info">
+        <h3>Personal Portfolio</h3>
+        <p>Responsive portfolio website showcasing my skills and projects.</p>
+        <a href="#" target="_blank">View Project →</a>
       </div>
-      <div class="about-right">
-        <h3>Technical Skills</h3>
-        <p>HTML, CSS, JavaScript, PHP, MySQL, UI/UX Design, Database Management.</p>
+    </div>
+
+    <div class="project-card">
+      <img src="20250924_151534.jpg" alt="School Management System">
+      <div class="project-info">
+        <h3>School Management System</h3>
+        <p>Web system for managing students, teachers, and records.</p>
+        <a href="#" target="_blank">View Project →</a>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="container">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Web Development</div>
-      <div class="skill-card">Programming</div>
-      <div class="skill-card">UI/UX Design</div>
-      <div class="skill-card">Database Management</div>
-      <div class="skill-card">Software Development</div>
-      <div class="skill-card">Networking</div>
+    <div class="project-card">
+      <img src="20250924_151538.jpg" alt="Hotel Booking App">
+      <div class="project-info">
+        <h3>Hotel Booking App</h3>
+        <p>Simple hotel reservation system using PHP and MySQL.</p>
+        <a href="#" target="_blank">View Project →</a>
+      </div>
     </div>
-  </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="container">
-    <h2>Projects</h2>
-    <div class="portfolio-grid">
-      <a href="#" class="portfolio-card">
-        <div class="project-image">
-          <img src="images/portfolio-site.png" alt="Portfolio Website">
-        </div>
-        <div class="project-content">
-          <h3>Portfolio Website</h3>
-          <p>My personal portfolio showcasing web development projects.</p>
-        </div>
-      </a>
+  </div>
+</section>
 
-      <a href="#" class="portfolio-card">
-        <div class="project-image">
-          <img src="images/school-system.png" alt="School Management System">
-        </div>
-        <div class="project-content">
-          <h3>School Management System</h3>
-          <p>Manage students, teachers, and classes using PHP & MySQL.</p>
-        </div>
-      </a>
+<!-- CONTACT -->
+<section class="section bg-dark">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
+  <p>Phone: +254 703 715 677</p>
+</section>
 
-      <a href="#" class="portfolio-card">
-        <div class="project-image">
-          <img src="images/hotel-booking.png" alt="Hotel Booking App">
-        </div>
-        <div class="project-content">
-          <h3>Hotel Booking App</h3>
-          <p>A small hotel booking system built with PHP and MySQL.</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="container">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
-    <p>Phone: +254703715677</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Collins Mupalia</p>
-  </footer>
+<footer>
+  <p>© 2026 Collins Mupalia • All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
