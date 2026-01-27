@@ -10,6 +10,27 @@
   gap: 35px;
   margin-top: 40px;
 }
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-card:hover .project-overlay {
+  opacity: 1;
+}
 
 /* Project Card */
 .portfolio-card {
@@ -876,6 +897,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
