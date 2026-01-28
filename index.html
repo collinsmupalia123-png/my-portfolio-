@@ -3,130 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Collins Mupalia | Web Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Collins Mupalia | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      color: #38bdf8;
+      font-size: 24px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: #38bdf8;
+    }
+
+    .hero p {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      color: #cbd5f5;
+    }
+
+    .hero .btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 10%;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #38bdf8;
+      margin-bottom: 40px;
+    }
+
+    /* ABOUT */
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #cbd5f5;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background: #020617;
+      padding: 20px;
+      text-align: center;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-8px);
+      background: #020617;
+      box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #020617;
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+    }
+
+    .project h4 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      margin: 0 12px;
+      font-size: 26px;
+      color: #38bdf8;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #0ea5e9;
+      transform: scale(1.2);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HERO -->
-<header class="hero">
-  <img src="drawing-shoot.svg" alt="Collins Mupalia" />
-  <h1>Collins Lukhale Mupalia</h1>
-  <p>Web Developer • UI/UX Enthusiast • Computer Science Student</p>
+  <!-- NAV -->
+  <nav>
+    <h1>Collins</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <div class="hero-buttons">
-    <a href="#portfolio" class="btn-primary">View Projects</a>
-    <a href="cv.pdf" class="btn-outline" download>Download CV</a>
-  </div>
-</header>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h2>Hi, I'm Collins Mupalia</h2>
+      <p>Computer Science Graduate | Web Developer | Tech Enthusiast</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section class="section">
-  <h2>About Me</h2>
-  <p class="center-text">
-    I am a passionate web developer based in Kenya, focused on building
-    clean, responsive, and user-friendly digital products. I enjoy turning
-    ideas into real-world applications using modern web technologies.
-  </p>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h3>About Me</h3>
+    <p>
+      I am a passionate Computer Science graduate focused on building modern,
+      user-friendly web applications. I enjoy solving problems using technology
+      and continuously improving my skills to meet industry standards.
+    </p>
+  </section>
 
-<!-- SKILLS -->
-<section class="section bg-light">
-  <h2>Core Skills</h2>
-  <div class="skills-grid">
-    <span>HTML & CSS</span>
-    <span>JavaScript</span>
-    <span>PHP & MySQL</span>
-    <span>UI / UX Design</span>
-    <span>Database Systems</span>
-    <span>Software Development</span>
-  </div>
-</section>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">PHP</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-  <h2>Selected Projects</h2>
-
-  <div class="portfolio-grid">
-
-    <div class="project-card">
-      <img src="20250924_151453.jpg" alt="Portfolio Website">
-      <div class="project-info">
-        <h3>Personal Portfolio</h3>
-        <p>Responsive portfolio website showcasing my skills and projects.</p>
-        <a href="#" target="_blank">View Project →</a>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects">
+      <div class="project">
+        <h4>Portfolio Website</h4>
+        <p>Personal responsive portfolio built using HTML & CSS.</p>
+      </div>
+      <div class="project">
+        <h4>Student Management System</h4>
+        <p>Web system using PHP & MySQL to manage student records.</p>
+      </div>
+      <div class="project">
+        <h4>Login Authentication System</h4>
+        <p>Secure authentication system with validation.</p>
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <img src="20250924_151534.jpg" alt="School Management System">
-      <div class="project-info">
-        <h3>School Management System</h3>
-        <p>Web system for managing students, teachers, and records.</p>
-        <a href="#" target="_blank">View Project →</a>
-      </div>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h3>Contact Me</h3>
+    <p>Email: collinsmupalia123@gmail.com</p>
+
+    <div class="socials">
+      <a href="https://github.com/collinsmupalia123-png" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
     </div>
+  </section>
 
-    <div class="project-card">
-      <img src="20250924_151538.jpg" alt="Hotel Booking App">
-      <div class="project-info">
-        <h3>Hotel Booking App</h3>
-        <p>Simple hotel reservation system using PHP and MySQL.</p>
-        <a href="#" target="_blank">View Project →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section bg-dark">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:collinsmupalia123@email.com">collinsmupalia123@email.com</a></p>
-  <p>Phone: +254 703 715 677</p>
-</section>
-
-<footer>
-  <div class="social-links">
-  <a href="https://github.com/collinsmupalia123-png" target="_blank" aria-label="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-
-  <a href="https://x.com/collins1046447" target="_blank" aria-label="X">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-
-  <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-
-  <a href="https://www.instagram.com/collinsmupalia" target="_blank" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-</div>
-
-  <p>© 2026 Collins Mupalia • All Rights Reserved</p>
-  <div class="social-links">
-  <a href="https://github.com/collinsmupalia123-png" target="_blank" aria-label="GitHub">
-    <img src="icons/github.svg" alt="GitHub">
-  </a>
-
-  <a href="https://x.com/collins1046447" target="_blank" aria-label="X">
-    <img src="icons/x.svg" alt="X">
-  </a>
-
-  <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-    <img src="icons/facebook.svg" alt="Facebook">
-  </a>
-
-  <a href="https://www.instagram.com/collinsmupalia" target="_blank" aria-label="Instagram">
-    <img src="icons/instagram.svg" alt="Instagram">
-  </a>
-</div>
-
-</footer>
+  <footer>
+    © 2026 Collins Mupalia. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
-
-
