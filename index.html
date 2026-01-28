@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collins Mupalia | Premium Portfolio</title>
+<title>Collins Mupalia | Portfolio</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<img src="./profile.jpg" alt="Collins Mupalia">
 
 <style>
 :root{
@@ -34,85 +33,86 @@ body{
 
 a{text-decoration:none;color:inherit;}
 
-/* NAV */
+/* NAVBAR */
 nav{
   position:fixed;
-  width:100%;
   top:0;
+  width:100%;
   z-index:1000;
-  padding:18px 10%;
+  padding:15px 8%;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  backdrop-filter:blur(12px);
-  background:rgba(2,6,23,0.6);
+  justify-content:space-between;
+  backdrop-filter:blur(14px);
+  background:rgba(2,6,23,0.75);
 }
 
-nav h1{
-  color:var(--primary);
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.nav-left img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--primary);
+}
+
+.nav-left span{
   font-weight:700;
+  color:var(--primary);
+  font-size:18px;
 }
 
 nav ul{
+  list-style:none;
   display:flex;
   gap:25px;
-  list-style:none;
-}
-
-nav ul li a{
-  opacity:.85;
 }
 
 nav ul li a:hover{
   color:var(--primary);
-  opacity:1;
 }
 
 /* HERO */
 .hero{
   min-height:100vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  padding:140px 10% 80px;
+  display:flex;
   align-items:center;
-  padding:120px 10%;
-  gap:60px;
 }
 
-.hero img{
-  width:320px;
-  height:320px;
-  border-radius:50%;
-  object-fit:cover;
-  justify-self:center;
-  border:6px solid var(--primary);
-  box-shadow:0 0 80px rgba(56,189,248,0.45);
+.hero-content{
+  max-width:650px;
 }
 
-.hero h2{
-  font-size:3.2rem;
+.hero-content h1{
+  font-size:3.4rem;
   line-height:1.2;
 }
 
-.hero h2 span{
+.hero-content h1 span{
   color:var(--primary);
 }
 
-.hero p{
+.hero-content p{
   margin:20px 0;
   color:#cbd5f5;
-  max-width:520px;
 }
 
-.hero-btns{
+.hero-buttons{
   margin-top:25px;
 }
 
 .btn{
-  padding:14px 34px;
+  padding:14px 36px;
   border-radius:40px;
   font-weight:600;
-  display:inline-block;
   transition:.3s;
+  display:inline-block;
 }
 
 .btn-primary{
@@ -129,23 +129,24 @@ nav ul li a:hover{
   transform:translateY(-4px) scale(1.05);
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
   padding:110px 10%;
 }
 
-section h3{
-  font-size:2.5rem;
+section h2{
+  font-size:2.6rem;
   text-align:center;
   margin-bottom:60px;
 }
 
+/* GLASS CARD */
 .glass{
   background:var(--glass);
   backdrop-filter:blur(18px);
-  border-radius:22px;
+  border-radius:24px;
   padding:45px;
-  box-shadow:0 25px 60px rgba(0,0,0,.6);
+  box-shadow:0 25px 60px rgba(0,0,0,0.6);
 }
 
 /* ABOUT */
@@ -164,11 +165,11 @@ section h3{
 }
 
 .skill{
-  padding:30px;
+  padding:28px;
   text-align:center;
   border-radius:20px;
-  background:linear-gradient(145deg,#020617,#020617);
-  transition:.3s;
+  background:#020617;
+  transition:.35s;
 }
 
 .skill:hover{
@@ -196,7 +197,7 @@ section h3{
   box-shadow:0 30px 70px rgba(56,189,248,.35);
 }
 
-.project h4{
+.project h3{
   color:var(--primary);
   margin-bottom:10px;
 }
@@ -231,19 +232,24 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
+  .hero-content h1{
+    font-size:2.4rem;
   }
-  .hero img{margin-bottom:30px;}
+  nav ul{
+    display:none;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <h1>Collins</h1>
+  <div class="nav-left">
+    <img src="./profile.jpg" alt="Collins Mupalia">
+    <span>Collins</span>
+  </div>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -254,37 +260,35 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h2>Hello, I’m <span>Collins Mupalia</span></h2>
+  <div class="hero-content">
+    <h1>Hi, I’m <span>Collins Mupalia</span></h1>
     <p>
-      Computer Science Graduate and Web Developer passionate about building
-      elegant, high-performance digital solutions.
+      Computer Science Graduate & Web Developer focused on building modern,
+      scalable, and user-friendly digital solutions.
     </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">View Work</a>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="Collins_Mupalia_CV.pdf" class="btn btn-outline" download>Download CV</a>
     </div>
   </div>
-
-  <img src="profile.jpg" alt="Collins Mupalia">
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h3>About Me</h3>
+  <h2>About Me</h2>
   <div class="glass about">
     <p>
-      I am a motivated Computer Science graduate with a strong interest in modern
-      web technologies. I focus on writing clean code, building intuitive user
-      experiences, and continuously improving my technical expertise to meet
-      global industry standards.
+      I am a passionate Computer Science graduate with a strong interest in
+      modern web technologies. I enjoy crafting clean interfaces, writing
+      efficient code, and continuously growing my skills to meet global
+      industry standards.
     </p>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <h3>Core Skills</h3>
+  <h2>Skills</h2>
   <div class="skills">
     <div class="skill">HTML5</div>
     <div class="skill">CSS3</div>
@@ -297,26 +301,26 @@ footer{
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h3>Selected Projects</h3>
+  <h2>Projects</h2>
   <div class="projects">
     <div class="project">
-      <h4>Portfolio Website</h4>
-      <p>Premium responsive portfolio using modern UI principles.</p>
+      <h3>Portfolio Website</h3>
+      <p>Premium responsive portfolio built with modern UI principles.</p>
     </div>
     <div class="project">
-      <h4>Student Management System</h4>
-      <p>PHP & MySQL system for managing academic records.</p>
+      <h3>Student Management System</h3>
+      <p>PHP & MySQL system for managing student records.</p>
     </div>
     <div class="project">
-      <h4>Authentication System</h4>
-      <p>Secure login system with sessions and validation.</p>
+      <h3>Authentication System</h3>
+      <p>Secure login system with validation and sessions.</p>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-  <h3>Let’s Connect</h3>
+  <h2>Contact</h2>
   <p>Email: collinsmupalia123@gmail.com</p>
   <div class="socials">
     <a href="https://github.com/collinsmupalia123-png" target="_blank"><i class="fab fa-github"></i></a>
@@ -332,4 +336,3 @@ footer{
 
 </body>
 </html>
-
