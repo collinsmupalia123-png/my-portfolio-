@@ -1,45 +1,72 @@
-// JavaScript for Collins Mupalia Portfolio
+// Collins Mupalia Portfolio - Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 100) {
             navbar.classList.add('navbar-scrolled');
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
             navbar.classList.remove('navbar-scrolled');
-            navbar.style.boxShadow = 'none';
+        }
+        
+        // Back to top button visibility
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
         }
     });
 
-    // Animate elements on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('visible');
+    // Animated counter for stats
+    function animateCounter(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            element.textContent = value + (element.id === 'exp-years' ? '+' : element.id === 'client-satisfaction' ? '%' : '');
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
             }
-        });
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Initialize counters when in viewport
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
     };
 
-    // Add animate-on-scroll class to elements
-    document.querySelectorAll('.card, .skill-item, .portfolio-card').forEach((el, index) => {
-        el.classList.add('animate-on-scroll');
-        el.style.transitionDelay = `${index * 0.1}s`;
-    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const expYears = document.getElementById('exp-years');
+                const projectsCompleted = document.getElementById('projects-completed');
+                const clientSatisfaction = document.getElementById('client-satisfaction');
+                
+                if (expYears) animateCounter(expYears, 0, 5, 2000);
+                if (projectsCompleted) animateCounter(projectsCompleted, 0, 40, 2000);
+                if (clientSatisfaction) animateCounter(clientSatisfaction, 0, 100, 2000);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-    // Initial check for elements in view
-    animateOnScroll();
-    
-    // Check on scroll
-    window.addEventListener('scroll', animateOnScroll);
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) observer.observe(heroSection);
 
-    // Form submission
+    // Form submission handler
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -53,24 +80,104 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: document.getElementById('message').value
             };
             
-            // In a real application, you would send this data to a server
-            // For now, we'll show a success message
-            showNotification('Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+            submitBtn.disabled = true;
             
-            // Reset form
-            contactForm.reset();
+            // Simulate API call (replace with actual API call in production)
+            setTimeout(() => {
+                // Show success message
+                showAlert('Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
     }
 
-    // Skill bars animation
-    const skillBars = document.querySelectorAll('.progress-bar');
-    skillBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
+    // Alert notification system
+    function showAlert(message, type) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+        alertDiv.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+        `;
         
+        alertDiv.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="bi bi-${type === 'success' ? 'check-circle' : 'exclamation-circle'}-fill me-3 fs-4"></i>
+                <div class="flex-grow-1">
+                    <strong class="me-2">${type === 'success' ? 'Success!' : 'Error!'}</strong>
+                    ${message}
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        `;
+        
+        document.body.appendChild(alertDiv);
+        
+        // Auto remove after 5 seconds
         setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
+            if (alertDiv.parentNode) {
+                const bsAlert = new bootstrap.Alert(alertDiv);
+                bsAlert.close();
+            }
+        }, 5000);
+    }
+
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Set current year in footer
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    navbarToggler.click();
+                }
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 
     // Portfolio card hover effects
@@ -85,92 +192,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click();
-                }
-                
-                // Scroll to target
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+    // Tech icon hover effects
+    const techIcons = document.querySelectorAll('.tech-icon-item');
+    techIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
 
-    // Notification system
-    function showNotification(message, type) {
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            z-index: 9999;
-            min-width: 300px;
-            animation: slideInRight 0.3s ease;
-        `;
-        
-        notification.innerHTML = `
-            <strong>${type === 'success' ? 'Success!' : 'Error!'}</strong> ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.progress-bar');
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+                
+                skillObserver.unobserve(bar);
             }
-        }, 5000);
+        });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Download CV button enhancement
+    const downloadCVBtn = document.querySelector('a[download]');
+    if (downloadCVBtn) {
+        downloadCVBtn.addEventListener('click', function(e) {
+            if (!this.getAttribute('href')) {
+                e.preventDefault();
+                showAlert('CV download will be available soon!', 'info');
+            }
+        });
     }
-
-    // Add slideInRight animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Stats counter animation
-    const stats = document.querySelectorAll('.stat-box h3');
-    stats.forEach(stat => {
-        const target = parseInt(stat.textContent);
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
-        }, 30);
-    });
 
     // Initialize tooltips
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -178,7 +241,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
-    // Current year in footer
-    document.querySelector('footer p.text-muted').innerHTML = 
-        document.querySelector('footer p.text-muted').innerHTML.replace('2023', new Date().getFullYear());
+    // Add loading animation to page
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+        
+        // Add subtle animation to profile image
+        const profileImg = document.querySelector('.profile-img');
+        if (profileImg) {
+            setTimeout(() => {
+                profileImg.style.opacity = '1';
+            }, 500);
+        }
+    });
 });
