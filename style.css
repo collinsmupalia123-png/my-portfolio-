@@ -373,48 +373,6 @@ h1, h2, h3, h4, h5, h6 {
     .portfolio-img {
         height: 200px;
     }
-    /* Improved Image Styling for your profile.jpg */
-
-/* Hero image styling */
-.hero-img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    animation: float 3s ease-in-out infinite;
-}
-
-/* About image styling */
-.about-image img {
-    height: 500px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 15px;
-}
-
-/* Image hover effects */
-.hero-img:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-}
-
-.about-image img:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
-}
-
-/* Responsive image adjustments */
-@media (max-width: 768px) {
-    .hero-img {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .about-image img {
-        height: 300px;
-    }
-}
 }
 
 /* Animation Classes */
@@ -446,4 +404,3 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #0b5ed7, #5a32a3);
 }
-
