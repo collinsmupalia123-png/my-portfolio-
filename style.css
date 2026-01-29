@@ -225,6 +225,22 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary);
 }
 
+/* CV Download Button */
+.btn-secondary {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
 /* Sections */
 section {
     scroll-margin-top: 80px;
@@ -378,27 +394,15 @@ footer {
     box-shadow: var(--shadow-lg);
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* CV Download Animation */
+@keyframes downloadPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
+.download-cv {
+    animation: downloadPulse 2s infinite;
 }
 
 /* Responsive Design */
@@ -446,6 +450,15 @@ footer {
         width: 40px;
         height: 40px;
     }
+    
+    .d-flex.flex-wrap.gap-3 {
+        justify-content: center;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -477,4 +490,16 @@ footer {
     .card {
         break-inside: avoid;
     }
+}
+
+/* Loading Animation */
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
+}
+
+/* Error Image Fallback */
+img[onerror] {
+    object-fit: cover;
 }
