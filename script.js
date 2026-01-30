@@ -57,6 +57,60 @@ backToTopButton.addEventListener('click', function() {
     });
 });
 
+// CV Download Functionality
+function setupCVDownload() {
+    const cvButtons = document.querySelectorAll('a[download*="CV"]');
+    
+    cvButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Check if CV file exists
+            const cvUrl = this.getAttribute('href');
+            
+            fetch(cvUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // CV exists, allow download
+                        console.log('CV download initiated');
+                        
+                        // Optional: Track download with analytics
+                        trackCVDownload();
+                    } else {
+                        // CV doesn't exist, show alert
+                        e.preventDefault();
+                        showMessage('CV file not found. Please contact me directly for my resume.', 'warning');
+                    }
+                })
+                .catch(error => {
+                    console.log('Error checking CV file:', error);
+                    // If there's an error, still allow the download attempt
+                });
+        });
+    });
+}
+
+// Track CV downloads (for analytics)
+function trackCVDownload() {
+    // You can integrate with Google Analytics here
+    console.log('CV downloaded at:', new Date().toISOString());
+    
+    // Save to localStorage for tracking
+    try {
+        let downloads = JSON.parse(localStorage.getItem('cvDownloads')) || [];
+        downloads.push({
+            date: new Date().toISOString(),
+            userAgent: navigator.userAgent
+        });
+        
+        if (downloads.length > 100) {
+            downloads = downloads.slice(-100);
+        }
+        
+        localStorage.setItem('cvDownloads', JSON.stringify(downloads));
+    } catch (error) {
+        console.error('Error tracking download:', error);
+    }
+}
+
 // Contact Form Submission
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
@@ -106,7 +160,7 @@ if (contactForm) {
             saveMessageToLocal(formData);
             
             // Show success message
-            showMessage('Thank you! Your message has been sent. I\'ll get back to you soon.', 'success');
+            showMessage(`Thank you, ${name}! Your message has been sent. I'll get back to you within 24 hours at ${email}.`, 'success');
             
             // Reset form
             contactForm.reset();
@@ -129,14 +183,14 @@ function showMessage(text, type) {
         </div>
     `;
     
-    // Auto dismiss after 5 seconds
+    // Auto dismiss after 8 seconds
     setTimeout(() => {
         const alert = formMessage.querySelector('.alert');
         if (alert) {
             const bsAlert = new bootstrap.Alert(alert);
             bsAlert.close();
         }
-    }, 5000);
+    }, 8000);
 }
 
 function saveMessageToLocal(data) {
@@ -156,9 +210,83 @@ function saveMessageToLocal(data) {
     }
 }
 
+// Social Media Links Configuration
+const socialMediaLinks = {
+    linkedin: "https://www.linkedin.com/in/yourprofile", // Replace with your LinkedIn
+    github: "https://github.com/collinsmupalia123-png", // Your GitHub
+    twitter: "https://twitter.com/yourprofile", // Replace with your Twitter
+    facebook: "https://facebook.com/yourprofile", // Replace with your Facebook
+    instagram: "https://instagram.com/yourprofile" // Replace with your Instagram
+};
+
+function updateSocialMediaLinks() {
+    // Update all social media links
+    const socialIcons = document.querySelectorAll('.social-icon');
+    
+    socialIcons.forEach(icon => {
+        const platform = icon.querySelector('i').className;
+        
+        if (platform.includes('linkedin')) {
+            icon.href = socialMediaLinks.linkedin;
+        } else if (platform.includes('github')) {
+            icon.href = socialMediaLinks.github;
+        } else if (platform.includes('twitter')) {
+            icon.href = socialMediaLinks.twitter;
+        } else if (platform.includes('facebook')) {
+            icon.href = socialMediaLinks.facebook;
+        } else if (platform.includes('instagram')) {
+            icon.href = socialMediaLinks.instagram;
+        }
+        
+        // Ensure all links open in new tab
+        icon.target = '_blank';
+        icon.rel = 'noopener noreferrer';
+    });
+}
+
 // Initialize tooltips
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+// Page Load Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Setup CV download functionality
+    setupCVDownload();
+    
+    // Update social media links
+    updateSocialMediaLinks();
+    
+    // Check if CV file exists
+    checkCVFile();
+    
+    // Initialize all Bootstrap components
+    initializeBootstrapComponents();
+});
+
+function checkCVFile() {
+    // Check if CV file exists on server
+    fetch('collins_mupalia_CV.pdf', { method: 'HEAD' })
+        .then(response => {
+            if (!response.ok) {
+                console.warn('CV file not found at collins_mupalia_CV.pdf');
+                showCVWarning();
+            }
+        })
+        .catch(error => {
+            console.warn('Could not check CV file:', error);
+        });
+}
+
+function showCVWarning() {
+    // Optional: Show a warning to the user
+    console.log('CV file not found. Please ensure collins_mupalia_CV.pdf is in the same directory.');
+}
+
+function initializeBootstrapComponents() {
+    // Initialize any additional Bootstrap components
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+}
 
 // Formspree Integration Instructions
 console.log(`
