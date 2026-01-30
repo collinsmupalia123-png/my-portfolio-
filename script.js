@@ -402,7 +402,141 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }
         
-        // Track page load complete
+        // Track page load complete// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+    
+    // Close menu when clicking on a link
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        });
+    });
+    
+    // Feedback Form Submission
+    const feedbackForm = document.getElementById('feedbackForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 'Not specified';
+        
+        // Simple validation
+        if (!name || !email || !message) {
+            showFormMessage('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        // In a real implementation, you would send this data to a server
+        // For this example, we'll simulate a successful submission
+        
+        // Show loading state
+        const submitBtn = feedbackForm.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(function() {
+            // Reset form
+            feedbackForm.reset();
+            
+            // Reset rating stars
+            const ratingInputs = document.querySelectorAll('input[name="rating"]');
+            ratingInputs.forEach(input => {
+                input.checked = false;
+            });
+            
+            // Show success message
+            showFormMessage('Thank you for your feedback! I will get back to you soon.', 'success');
+            
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // In a real implementation, you would use Formspree or similar service
+            // Example with Formspree:
+            // const formData = new FormData(feedbackForm);
+            // fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            //     method: 'POST',
+            //     body: formData,
+            //     headers: {
+            //         'Accept': 'application/json'
+            //     }
+            // })
+            // .then(response => {
+            //     if (response.ok) {
+            //         showFormMessage('Thank you for your feedback! I will get back to you soon.', 'success');
+            //         feedbackForm.reset();
+            //     } else {
+            //         showFormMessage('There was an error sending your message. Please try again.', 'error');
+            //     }
+            // })
+            // .catch(error => {
+            //     showFormMessage('There was an error sending your message. Please try again.', 'error');
+            // });
+            
+        }, 1500);
+    });
+    
+    function showFormMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = 'form-message ' + type;
+        
+        // Hide message after 5 seconds
+        setTimeout(function() {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's just "#" or if it's the feedback form submit button
+            if (href === '#' || this.classList.contains('submit-btn')) return;
+            
+            e.preventDefault();
+            
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Formspree integration setup
+    // To use Formspree, follow these steps:
+    // 1. Go to https://formspree.io and create a free account
+    // 2. Create a new form and get your form ID
+    // 3. Replace 'YOUR_FORM_ID' in the form action with your actual Formspree form ID
+    // 4. Uncomment the fetch code in the form submission handler above
+    
+    // Current form uses a simulated submission for demo purposes
+    // To make it functional, you need to set up Formspree as described above
+});
         trackEvent('page_loaded', 'portfolio_loaded');
     });
 
@@ -411,3 +545,4 @@ document.addEventListener('DOMContentLoaded', function() {
         window.history.replaceState(null, null, window.location.href);
     }
 });
+
