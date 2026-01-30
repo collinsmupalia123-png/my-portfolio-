@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collins Mupalia | Full Stack Developer</title>
+    <title>Collins Mupalia | Award-Winning Full Stack Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional portfolio of Collins Lukhale Mupalia - Full Stack Developer specializing in modern web applications, mobile apps, and digital solutions.">
+    <meta name="keywords" content="Full Stack Developer, Web Developer, Collins Mupalia, React, Node.js, JavaScript, Portfolio">
+    <meta name="author" content="Collins Lukhale Mupalia">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,26 +17,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-code-slash me-2"></i>COLLINS MUPALIA
+            <a class="navbar-brand" href="#">
+                <span class="brand-text">Collins<span class="text-primary">.</span></span>
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
@@ -51,43 +74,85 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
+                
+                <div class="d-lg-flex align-items-center">
+                    <a href="collins_mupalia_CV.pdf" download="Collins_Mupalia_CV.pdf" class="btn btn-outline-primary btn-sm me-3">
+                        <i class="fas fa-download me-1"></i> CV
+                    </a>
+                    <a href="#contact" class="btn btn-primary btn-sm">
+                        <i class="fas fa-paper-plane me-1"></i> Hire Me
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section vh-100 d-flex align-items-center">
         <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
                     <div class="hero-content">
-                        <h6 class="text-primary mb-3">HELLO, I'M</h6>
-                        <h1 class="display-3 fw-bold mb-4">Collins <span class="text-primary">Lukhale Mupalia</span></h1>
-                        <h2 class="h3 mb-4">Full Stack Developer & Digital Solutions Architect</h2>
-                        <p class="lead mb-5">Creating innovative digital solutions with modern technologies. Passionate about building web applications that solve real-world problems.</p>
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="#portfolio" class="btn btn-primary btn-lg px-5">
-                                <i class="bi bi-briefcase me-2"></i>View My Work
+                        <h6 class="text-primary mb-3 animate__animated animate__fadeInUp">
+                            <span class="badge bg-primary-soft">HELLO, I'M</span>
+                        </h6>
+                        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                            Collins <span class="text-primary">Mupalia</span>
+                        </h1>
+                        <h2 class="h2 mb-4 text-muted animate__animated animate__fadeInUp animate__delay-2s">
+                            Full Stack Developer & Digital Solutions Architect
+                        </h2>
+                        <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-3s">
+                            I create beautiful, functional, and scalable digital experiences that help businesses grow and succeed in the digital world.
+                        </p>
+                        
+                        <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-4s">
+                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-briefcase me-2"></i>View Portfolio
                             </a>
-                            <a href="#contact" class="btn btn-outline-primary btn-lg px-5">
-                                <i class="bi bi-chat-dots me-2"></i>Hire Me
+                            <a href="#contact" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Contact Me
                             </a>
+                        </div>
+                        
+                        <div class="hero-stats mt-5 pt-4 animate__animated animate__fadeInUp animate__delay-5s">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="display-5 fw-bold text-primary">50+</h3>
+                                        <p class="text-muted">Projects</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="display-5 fw-bold text-primary">5+</h3>
+                                        <p class="text-muted">Years Experience</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="display-5 fw-bold text-primary">100%</h3>
+                                        <p class="text-muted">Client Satisfaction</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="profile-image-container">
-                        <div class="profile-frame">
-                            <img src="profile.jpg" alt="Collins Mupalia" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/3498db/ffffff?text=CM'">
-                            <div class="profile-badge">
-                                <i class="bi bi-award"></i>
+                
+                <div class="col-lg-6">
+                    <div class="hero-image-container">
+                        <div class="hero-image-wrapper">
+                            <img src="profile.jpg" alt="Collins Mupalia" class="hero-image img-fluid rounded-3">
+                            <div class="floating-element floating-1">
+                                <i class="fab fa-react text-primary"></i>
                             </div>
-                        </div>
-                        <div class="floating-tech">
-                            <span class="tech-icon"><i class="bi bi-filetype-js"></i></span>
-                            <span class="tech-icon"><i class="bi bi-filetype-html"></i></span>
-                            <span class="tech-icon"><i class="bi bi-filetype-css"></i></span>
-                            <span class="tech-icon"><i class="bi bi-github"></i></span>
+                            <div class="floating-element floating-2">
+                                <i class="fab fa-node-js text-success"></i>
+                            </div>
+                            <div class="floating-element floating-3">
+                                <i class="fab fa-js-square text-warning"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,64 +164,90 @@
     <section id="about" class="about-section py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
-                    <div class="about-image">
-                        <img src="profile.jpg" alt="About Collins" class="img-fluid rounded-3 shadow" onerror="this.src='https://via.placeholder.com/600x600/3498db/ffffff?text=CM'">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-image position-relative">
+                        <img src="profile.jpg" alt="About Collins Mupalia" class="img-fluid rounded-3 shadow-lg">
+                        <div class="experience-badge">
+                            <div class="badge-content">
+                                <h4 class="mb-0">5+</h4>
+                                <small>Years Experience</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <span class="badge bg-primary mb-3">ABOUT ME</span>
-                    <h2 class="display-5 fw-bold mb-4">Professional Profile</h2>
-                    <p class="lead mb-4">I am a passionate Full Stack Developer with expertise in creating modern, responsive web applications. With a strong foundation in both front-end and back-end technologies, I deliver comprehensive digital solutions.</p>
+                
+                <div class="col-lg-6">
+                    <div class="section-header mb-4">
+                        <span class="badge bg-primary-soft text-primary mb-3">ABOUT ME</span>
+                        <h2 class="display-5 fw-bold mb-4">Crafting Digital Excellence</h2>
+                    </div>
                     
-                    <div class="personal-info">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="info-item">
-                                    <i class="bi bi-person-circle text-primary"></i>
+                    <p class="lead mb-4">
+                        I'm Collins Lukhale Mupalia, a passionate Full Stack Developer with over 5 years of experience creating innovative digital solutions. I specialize in building modern web applications that deliver exceptional user experiences.
+                    </p>
+                    
+                    <p class="mb-5">
+                        My expertise spans across frontend and backend technologies, allowing me to deliver complete solutions from concept to deployment. I believe in writing clean, efficient code and creating intuitive user interfaces.
+                    </p>
+                    
+                    <div class="personal-info mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="info-item d-flex align-items-center">
+                                    <div class="info-icon bg-primary-soft rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fas fa-user text-primary"></i>
+                                    </div>
                                     <div>
-                                        <h6>Full Name</h6>
-                                        <p class="mb-0">Collins Lukhale Mupalia</p>
+                                        <h6 class="mb-1">Full Name</h6>
+                                        <p class="mb-0 text-muted">Collins Lukhale Mupalia</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="info-item">
-                                    <i class="bi bi-telephone text-primary"></i>
+                            
+                            <div class="col-md-6">
+                                <div class="info-item d-flex align-items-center">
+                                    <div class="info-icon bg-primary-soft rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fas fa-phone text-primary"></i>
+                                    </div>
                                     <div>
-                                        <h6>Phone Number</h6>
-                                        <p class="mb-0">+254 703 715 677</p>
+                                        <h6 class="mb-1">Phone Number</h6>
+                                        <p class="mb-0 text-muted">+254 703 715 677</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="info-item">
-                                    <i class="bi bi-envelope text-primary"></i>
+                            
+                            <div class="col-md-6">
+                                <div class="info-item d-flex align-items-center">
+                                    <div class="info-icon bg-primary-soft rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                    </div>
                                     <div>
-                                        <h6>Email Address</h6>
-                                        <p class="mb-0">collinsmupalia123@gmail.com</p>
+                                        <h6 class="mb-1">Email Address</h6>
+                                        <p class="mb-0 text-muted">collinsmupalia123@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="info-item">
-                                    <i class="bi bi-geo-alt text-primary"></i>
+                            
+                            <div class="col-md-6">
+                                <div class="info-item d-flex align-items-center">
+                                    <div class="info-icon bg-primary-soft rounded-circle d-flex align-items-center justify-content-center me-3">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                    </div>
                                     <div>
-                                        <h6>Location</h6>
-                                        <p class="mb-0">Nairobi, Kenya</p>
+                                        <h6 class="mb-1">Location</h6>
+                                        <p class="mb-0 text-muted">Nairobi, Kenya</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-4">
-                        <!-- Updated CV Download Button -->
-                        <a href="collins_mupalia_CV.pdf" class="btn btn-primary me-3" download="Collins_Mupalia_CV.pdf">
-                            <i class="bi bi-download me-2"></i>Download CV
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="collins_mupalia_CV.pdf" download="Collins_Mupalia_CV.pdf" class="btn btn-primary px-4 py-3">
+                            <i class="fas fa-download me-2"></i>Download CV
                         </a>
-                        <a href="#portfolio" class="btn btn-outline-primary">
-                            View Portfolio
+                        <a href="#contact" class="btn btn-outline-primary px-4 py-3">
+                            <i class="fas fa-envelope me-2"></i>Contact Me
                         </a>
                     </div>
                 </div>
@@ -167,85 +258,149 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary mb-3">TECHNICAL SKILLS</span>
-                <h2 class="display-5 fw-bold mb-4">My Expertise</h2>
-                <p class="lead">Mastering modern technologies to deliver exceptional results</p>
+            <div class="section-header text-center mb-5">
+                <span class="badge bg-primary-soft text-primary mb-3">SKILLS & EXPERTISE</span>
+                <h2 class="display-5 fw-bold mb-4">Technical Proficiency</h2>
+                <p class="lead text-muted">Mastering the tools and technologies that power modern digital solutions</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h5>Frontend Development</h5>
-                            <span class="text-primary">95%</span>
+                <!-- Frontend Skills -->
+                <div class="col-lg-6">
+                    <div class="skill-category">
+                        <h4 class="mb-4">
+                            <i class="fas fa-paint-brush text-primary me-2"></i>
+                            Frontend Development
+                        </h4>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>HTML5 / CSS3</span>
+                                <span class="text-primary">98%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 98%;"></div>
+                            </div>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>JavaScript & TypeScript</span>
+                                <span class="text-primary">95%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 95%;"></div>
+                            </div>
                         </div>
-                        <div class="skill-tags mt-3">
-                            <span class="badge bg-light text-dark me-2 mb-2">HTML5</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">CSS3</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">JavaScript</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">React</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Bootstrap</span>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>React & Next.js</span>
+                                <span class="text-primary">92%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 92%;"></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h5>Backend Development</h5>
-                            <span class="text-primary">90%</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                        </div>
-                        <div class="skill-tags mt-3">
-                            <span class="badge bg-light text-dark me-2 mb-2">Node.js</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Python</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">PHP</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">MySQL</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h5>UI/UX Design</h5>
-                            <span class="text-primary">85%</span>
-                        </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
-                        </div>
-                        <div class="skill-tags mt-3">
-                            <span class="badge bg-light text-dark me-2 mb-2">Figma</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Adobe XD</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Wireframing</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Prototyping</span>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Bootstrap & Tailwind</span>
+                                <span class="text-primary">96%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 96%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h5>DevOps & Tools</h5>
-                            <span class="text-primary">80%</span>
+                <!-- Backend Skills -->
+                <div class="col-lg-6">
+                    <div class="skill-category">
+                        <h4 class="mb-4">
+                            <i class="fas fa-server text-primary me-2"></i>
+                            Backend Development
+                        </h4>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Node.js & Express</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;"></div>
+                            </div>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Python & Django</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 85%;"></div>
+                            </div>
                         </div>
-                        <div class="skill-tags mt-3">
-                            <span class="badge bg-light text-dark me-2 mb-2">Git</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Docker</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">AWS</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">CI/CD</span>
-                            <span class="badge bg-light text-dark me-2 mb-2">Linux</span>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>MySQL & MongoDB</span>
+                                <span class="text-primary">88%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 88%;"></div>
+                            </div>
                         </div>
+                        
+                        <div class="skill-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>RESTful APIs</span>
+                                <span class="text-primary">94%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar" style="width: 94%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack -->
+            <div class="tech-stack mt-5 pt-5">
+                <h4 class="text-center mb-4">Tech Stack</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <div class="tech-item">
+                        <i class="fab fa-html5 fa-2x text-danger"></i>
+                        <span class="d-block mt-2">HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt fa-2x text-primary"></i>
+                        <span class="d-block mt-2">CSS3</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js-square fa-2x text-warning"></i>
+                        <span class="d-block mt-2">JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-react fa-2x text-info"></i>
+                        <span class="d-block mt-2">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-node-js fa-2x text-success"></i>
+                        <span class="d-block mt-2">Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-python fa-2x text-info"></i>
+                        <span class="d-block mt-2">Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database fa-2x text-secondary"></i>
+                        <span class="d-block mt-2">MySQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt fa-2x text-danger"></i>
+                        <span class="d-block mt-2">Git</span>
                     </div>
                 </div>
             </div>
@@ -255,130 +410,418 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary mb-3">PORTFOLIO</span>
-                <h2 class="display-5 fw-bold mb-4">My Recent Work</h2>
-                <p class="lead">Showcasing projects that demonstrate technical expertise and creative solutions</p>
+            <div class="section-header text-center mb-5">
+                <span class="badge bg-primary-soft text-primary mb-3">PORTFOLIO</span>
+                <h2 class="display-5 fw-bold mb-4">Featured Projects</h2>
+                <p class="lead text-muted">Showcasing my best work and innovative solutions</p>
             </div>
             
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Commerce Platform" class="img-fluid">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-primary">View Details</a>
+            <!-- Portfolio Filter -->
+            <div class="portfolio-filter mb-5">
+                <div class="d-flex justify-content-center flex-wrap">
+                    <button class="btn btn-outline-primary filter-btn active" data-filter="all">All Projects</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="web">Web Development</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="mobile">Mobile Apps</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="design">UI/UX Design</button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <div class="row g-4">
+                    <!-- Project 1 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="image.jpeg" alt="E-Commerce Platform" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="image.jpeg" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-primary">Web Development</span>
+                                </div>
+                                <h4 class="project-title">Modern E-Commerce Platform</h4>
+                                <p class="project-description">
+                                    A full-featured online shopping platform with secure payment integration, inventory management, and admin dashboard.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">Stripe API</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h4>E-Commerce Platform</h4>
-                            <p>Full-featured online store with payment integration and inventory management</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">React</span>
-                                <span class="badge bg-primary">Node.js</span>
-                                <span class="badge bg-primary">MongoDB</span>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="image1.jpeg" alt="Fitness Mobile App" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="image1.jpeg" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-success">Mobile App</span>
+                                </div>
+                                <h4 class="project-title">Fitness & Wellness App</h4>
+                                <p class="project-description">
+                                    Cross-platform fitness application with workout tracking, nutrition planning, and progress analytics.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Redux</span>
+                                    <span class="tech-tag">HealthKit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="design">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="image2.jpeg" alt="UI/UX Dashboard Design" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="image2.jpeg" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-warning">UI/UX Design</span>
+                                </div>
+                                <h4 class="project-title">Business Analytics Dashboard</h4>
+                                <p class="project-description">
+                                    A comprehensive dashboard for data visualization, business intelligence, and real-time analytics.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">Adobe XD</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">Material UI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Corporate Website" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="#" class="btn btn-light btn-sm">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-primary">Web Development</span>
+                                </div>
+                                <h4 class="project-title">Corporate Business Website</h4>
+                                <p class="project-description">
+                                    Professional corporate website with CMS integration, SEO optimization, and lead generation system.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">WordPress</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">SEO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Food Delivery App" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="#" class="btn btn-light btn-sm">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-success">Mobile App</span>
+                                </div>
+                                <h4 class="project-title">Food Delivery Application</h4>
+                                <p class="project-description">
+                                    Food ordering and delivery application with real-time tracking, payment integration, and restaurant management.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Google Maps</span>
+                                    <span class="tech-tag">Payment API</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="col-lg-4 col-md-6 portfolio-item" data-category="design">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Finance App Design" class="img-fluid">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <a href="#" class="btn btn-light btn-sm">
+                                            <i class="fas fa-expand"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-category">
+                                    <span class="badge bg-warning">UI/UX Design</span>
+                                </div>
+                                <h4 class="project-title">Fintech Banking App</h4>
+                                <p class="project-description">
+                                    Modern banking application design with focus on user experience, security, and financial management tools.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">Prototyping</span>
+                                    <span class="tech-tag">User Testing</span>
+                                    <span class="tech-tag">Design System</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Dashboard" class="img-fluid">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Business Analytics Dashboard</h4>
-                            <p>Real-time data visualization and analytics platform for business intelligence</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">Vue.js</span>
-                                <span class="badge bg-primary">Python</span>
-                                <span class="badge bg-primary">Chart.js</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="img-fluid">
-                            <div class="project-overlay">
-                                <a href="#" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h4>Fitness Mobile App</h4>
-                            <p>Cross-platform fitness application with workout tracking and nutrition planning</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">React Native</span>
-                                <span class="badge bg-primary">Firebase</span>
-                                <span class="badge bg-primary">Redux</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary btn-lg px-5">
+                    <i class="fas fa-briefcase me-2"></i>Start Your Project
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Project Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">E-Commerce Platform</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="image.jpeg" alt="E-Commerce Platform" class="img-fluid mb-4">
+                    <h4>Project Overview</h4>
+                    <p>A comprehensive e-commerce solution built with modern technologies to provide seamless shopping experience.</p>
+                    <h5>Technologies Used:</h5>
+                    <div class="tech-tags mb-4">
+                        <span class="badge bg-primary">React</span>
+                        <span class="badge bg-primary">Node.js</span>
+                        <span class="badge bg-primary">MongoDB</span>
+                        <span class="badge bg-primary">Stripe API</span>
+                    </div>
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>User authentication and authorization</li>
+                        <li>Product catalog with filters</li>
+                        <li>Shopping cart and checkout</li>
+                        <li>Payment gateway integration</li>
+                        <li>Admin dashboard</li>
+                        <li>Order tracking system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fitness Mobile App</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="image1.jpeg" alt="Fitness App" class="img-fluid mb-4">
+                    <h4>Project Overview</h4>
+                    <p>A comprehensive fitness application designed to help users achieve their health and wellness goals.</p>
+                    <h5>Technologies Used:</h5>
+                    <div class="tech-tags mb-4">
+                        <span class="badge bg-success">React Native</span>
+                        <span class="badge bg-success">Firebase</span>
+                        <span class="badge bg-success">Redux</span>
+                        <span class="badge bg-success">HealthKit</span>
+                    </div>
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>Workout plans and tracking</li>
+                        <li>Nutrition and meal planning</li>
+                        <li>Progress analytics</li>
+                        <li>Community features</li>
+                        <li>Wearable device integration</li>
+                        <li>Personal trainer connect</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 3 -->
+    <div class="modal fade" id="projectModal3" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Business Analytics Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="image2.jpeg" alt="Dashboard Design" class="img-fluid mb-4">
+                    <h4>Project Overview</h4>
+                    <p>A modern dashboard design for data visualization and business intelligence with focus on user experience.</p>
+                    <h5>Technologies Used:</h5>
+                    <div class="tech-tags mb-4">
+                        <span class="badge bg-warning">Figma</span>
+                        <span class="badge bg-warning">Adobe XD</span>
+                        <span class="badge bg-warning">Chart.js</span>
+                        <span class="badge bg-warning">Material UI</span>
+                    </div>
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>Real-time data visualization</li>
+                        <li>Interactive charts and graphs</li>
+                        <li>Customizable dashboards</li>
+                        <li>Responsive design</li>
+                        <li>Dark/Light mode</li>
+                        <li>Export functionality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Services Section -->
     <section id="services" class="services-section py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary mb-3">SERVICES</span>
+            <div class="section-header text-center mb-5">
+                <span class="badge bg-primary-soft text-primary mb-3">SERVICES</span>
                 <h2 class="display-5 fw-bold mb-4">What I Offer</h2>
-                <p class="lead">Comprehensive digital solutions tailored to your business needs</p>
+                <p class="lead text-muted">Comprehensive digital solutions to transform your business</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-card text-center">
                         <div class="service-icon">
-                            <i class="bi bi-laptop"></i>
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h4>Web Development</h4>
-                        <p>Custom website development using modern technologies and best practices</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>Responsive Design</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>Performance Optimization</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>SEO Friendly</li>
+                        <h4 class="mt-4 mb-3">Web Development</h4>
+                        <p class="text-muted">Custom websites and web applications built with modern technologies and best practices.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>Responsive Design
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>Performance Optimization
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>SEO Friendly
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-primary me-2"></i>Cross-browser Compatible
+                            </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-card text-center">
                         <div class="service-icon">
-                            <i class="bi bi-phone"></i>
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h4>Mobile App Development</h4>
-                        <p>Cross-platform mobile applications for iOS and Android devices</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>React Native</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>UI/UX Design</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>App Store Deployment</li>
+                        <h4 class="mt-4 mb-3">Mobile App Development</h4>
+                        <p class="text-muted">Native and cross-platform mobile applications for iOS and Android devices.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>iOS & Android Apps
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>React Native Development
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>App Store Deployment
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-primary me-2"></i>App Maintenance
+                            </li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-4 col-md-6">
                     <div class="service-card text-center">
                         <div class="service-icon">
-                            <i class="bi bi-palette"></i>
+                            <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h4>UI/UX Design</h4>
-                        <p>User-centered design solutions that enhance user experience and engagement</p>
-                        <ul class="list-unstyled">
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>Wireframing</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>Prototyping</li>
-                            <li><i class="bi bi-check-circle text-primary me-2"></i>User Testing</li>
+                        <h4 class="mt-4 mb-3">UI/UX Design</h4>
+                        <p class="text-muted">User-centered design solutions that enhance user experience and drive engagement.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>Wireframing & Prototyping
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>User Research
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check text-primary me-2"></i>Interaction Design
+                            </li>
+                            <li>
+                                <i class="fas fa-check text-primary me-2"></i>Design Systems
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -389,76 +832,113 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary mb-3">CONTACT</span>
-                <h2 class="display-5 fw-bold mb-4">Get In Touch</h2>
-                <p class="lead">Have a project in mind? Let's discuss how we can work together</p>
+            <div class="section-header text-center mb-5">
+                <span class="badge bg-primary-soft text-primary mb-3">CONTACT</span>
+                <h2 class="display-5 fw-bold mb-4">Let's Work Together</h2>
+                <p class="lead text-muted">Have a project in mind? Let's discuss how we can create something amazing</p>
             </div>
             
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="contact-form" data-aos="fade-up">
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                                        <label for="name"><i class="bi bi-person me-2"></i>Your Name</label>
+                    <div class="contact-card">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="contact-info p-5">
+                                    <h4 class="mb-4">Get In Touch</h4>
+                                    
+                                    <div class="contact-item d-flex mb-4">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-user text-primary"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Full Name</h6>
+                                            <p>Collins Lukhale Mupalia</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                                        <label for="email"><i class="bi bi-envelope me-2"></i>Your Email</label>
+                                    
+                                    <div class="contact-item d-flex mb-4">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone text-primary"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Phone Number</h6>
+                                            <p>+254 703 715 677</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject"><i class="bi bi-chat-text me-2"></i>Subject</label>
+                                    
+                                    <div class="contact-item d-flex mb-4">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope text-primary"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Email Address</h6>
+                                            <p>collinsmupalia123@gmail.com</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" style="height: 150px" required></textarea>
-                                        <label for="message"><i class="bi bi-chat-left-text me-2"></i>Your Message</label>
+                                    
+                                    <div class="contact-item d-flex mb-4">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-map-marker-alt text-primary"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Location</h6>
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg w-100">
-                                        <i class="bi bi-send me-2"></i>Send Message
-                                    </button>
+                                    
+                                    <div class="social-links mt-5">
+                                        <h6 class="mb-3">Connect With Me</h6>
+                                        <div class="d-flex gap-3">
+                                            <a href="https://linkedin.com" target="_blank" class="social-link">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                            <a href="https://github.com/collinsmupalia123-png" target="_blank" class="social-link">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                            <a href="https://twitter.com" target="_blank" class="social-link">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a href="https://facebook.com" target="_blank" class="social-link">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a href="https://instagram.com" target="_blank" class="social-link">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-                        <div id="formMessage" class="mt-3"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contact Info -->
-            <div class="row mt-5">
-                <div class="col-lg-10 mx-auto">
-                    <div class="row g-4">
-                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="50">
-                            <div class="contact-info-item">
-                                <i class="bi bi-telephone text-primary"></i>
-                                <h5>Phone</h5>
-                                <p>+254 703 715 677</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
-                            <div class="contact-info-item">
-                                <i class="bi bi-envelope text-primary"></i>
-                                <h5>Email</h5>
-                                <p>collinsmupalia123@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="150">
-                            <div class="contact-info-item">
-                                <i class="bi bi-geo-alt text-primary"></i>
-                                <h5>Location</h5>
-                                <p>Nairobi, Kenya</p>
+                            
+                            <div class="col-lg-6">
+                                <div class="contact-form p-5">
+                                    <form id="contactForm">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Your Name</label>
+                                            <input type="text" class="form-control" id="name" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Your Email</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="subject" class="form-label">Subject</label>
+                                            <input type="text" class="form-control" id="subject">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="message" class="form-label">Your Message</label>
+                                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                                        </button>
+                                    </form>
+                                    
+                                    <div id="formMessage" class="mt-3"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -473,48 +953,49 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="footer-brand">
-                        <h3 class="text-white">Collins Mupalia</h3>
-                        <p class="text-light">Full Stack Developer</p>
+                        <h3 class="text-white mb-2">Collins Mupalia</h3>
+                        <p class="text-light mb-0">Full Stack Developer & Digital Solutions Architect</p>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <div class="social-links text-center">
-                        <!-- Updated Social Media Links -->
-                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon" title="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
+                    <div class="footer-social text-center">
+                        <a href="https://linkedin.com" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/collinsmupalia123-png" target="_blank" class="social-icon" title="GitHub">
-                            <i class="bi bi-github"></i>
+                        <a href="https://github.com/collinsmupalia123-png" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://twitter.com/" target="_blank" class="social-icon" title="Twitter">
-                            <i class="bi bi-twitter"></i>
+                        <a href="https://twitter.com" target="_blank" class="footer-social-link">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://facebook.com/" target="_blank" class="social-icon" title="Facebook">
-                            <i class="bi bi-facebook"></i>
+                        <a href="https://facebook.com" target="_blank" class="footer-social-link">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/" target="_blank" class="social-icon" title="Instagram">
-                            <i class="bi bi-instagram"></i>
+                        <a href="https://instagram.com" target="_blank" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
+                
                 <div class="col-lg-4">
                     <div class="footer-contact text-lg-end">
                         <p class="text-light mb-1">
-                            <i class="bi bi-envelope me-2"></i>collinsmupalia123@gmail.com
+                            <i class="fas fa-envelope me-2"></i>collinsmupalia123@gmail.com
                         </p>
                         <p class="text-light mb-0">
-                            <i class="bi bi-phone me-2"></i>+254 703 715 677
+                            <i class="fas fa-phone me-2"></i>+254 703 715 677
                         </p>
                     </div>
                 </div>
             </div>
             
-            <hr class="my-5 border-light">
+            <hr class="my-5 border-light opacity-25">
             
             <div class="row">
                 <div class="col-12 text-center">
                     <p class="text-light mb-0">
-                        &copy; 2026 Collins Lukhale Mupalia. All rights reserved. 
+                        &copy; 2026 Collins Lukhale Mupalia. All rights reserved.
                         <span class="d-block d-md-inline mt-2 mt-md-0">Designed and developed by Collins Lukhale Mupalia</span>
                     </p>
                 </div>
@@ -524,21 +1005,11 @@
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="btn btn-primary back-to-top">
-        <i class="bi bi-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
-
-    <!-- Additional CV Download Button (Fixed Position) -->
-    <div class="fixed-cv-download">
-        <a href="collins_mupalia_CV.pdf" class="btn btn-primary" download="Collins_Mupalia_CV.pdf" title="Download CV">
-            <i class="bi bi-download me-2"></i>CV
-        </a>
-    </div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom JS -->
     <script src="script.js"></script>
