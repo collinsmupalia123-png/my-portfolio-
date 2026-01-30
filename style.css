@@ -97,14 +97,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-image-container {
-    max-width: 500px;
+    max-width: 250px;
     position: relative;
 }
 
 .profile-frame {
     position: relative;
     display: inline-block;
-    border-radius: 50%;
+    border-radius: 25%;
     padding: 15px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     box-shadow: var(--shadow-lg);
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
     border: 8px solid white;
-    border-radius: 50%;
+    border-radius: 25%;
     transition: transform 0.5s ease;
     position: relative;
     z-index: 1;
@@ -503,3 +503,4 @@ footer {
 img[onerror] {
     object-fit: cover;
 }
+
