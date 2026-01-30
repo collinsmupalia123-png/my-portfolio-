@@ -3,144 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collins Lukhale Mupalia - Portfolio</title>
+    <title>Collins Mupalia | Full Stack Developer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a href="#" class="logo">Collins Mupalia</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-code-slash me-2"></i>COLLINS MUPALIA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Collins Lukhale Mupalia</h1>
-                <h2 class="hero-subtitle">Web Developer & Digital Solutions Expert</h2>
-                <p class="hero-text">Creating innovative digital solutions with modern technologies</p>
-                <div class="hero-btns">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h6 class="text-primary mb-3">HELLO, I'M</h6>
+                        <h1 class="display-3 fw-bold mb-4">Collins <span class="text-primary">Lukhale Mupalia</span></h1>
+                        <h2 class="h3 mb-4">Full Stack Developer & Digital Solutions Architect</h2>
+                        <p class="lead mb-5">Creating innovative digital solutions with modern technologies. Passionate about building web applications that solve real-world problems.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#portfolio" class="btn btn-primary btn-lg px-5">
+                                <i class="bi bi-briefcase me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg px-5">
+                                <i class="bi bi-chat-dots me-2"></i>Hire Me
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-picture-container">
-                    <img src="images/IMG-20240812-WA0000.jpg" alt="Collins Mupalia" class="profile-picture" onerror="this.src='https://via.placeholder.com/300x300/3498db/ffffff?text=CM';">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="profile-image-container">
+                        <div class="profile-frame">
+                            <img src="profile.jpg" alt="Collins Mupalia" class="profile-img">
+                            <div class="profile-badge">
+                                <i class="bi bi-award"></i>
+                            </div>
+                        </div>
+                        <div class="floating-tech">
+                            <span class="tech-icon"><i class="bi bi-filetype-js"></i></span>
+                            <span class="tech-icon"><i class="bi bi-filetype-html"></i></span>
+                            <span class="tech-icon"><i class="bi bi-filetype-css"></i></span>
+                            <span class="tech-icon"><i class="bi bi-github"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Personal Details Section -->
-    <section id="about" class="personal-details">
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
         <div class="container">
-            <h2 class="section-title">Personal Details</h2>
-            <div class="details-grid">
-                <div class="detail-card">
-                    <div class="detail-icon">
-                        <i class="fas fa-user"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
+                    <div class="about-image">
+                        <img src="profile.jpg" alt="About Collins" class="img-fluid rounded-3 shadow">
                     </div>
-                    <h3>Full Name</h3>
-                    <p>Collins Lukhale Mupalia</p>
                 </div>
-                <div class="detail-card">
-                    <div class="detail-icon">
-                        <i class="fas fa-phone"></i>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <span class="badge bg-primary mb-3">ABOUT ME</span>
+                    <h2 class="display-5 fw-bold mb-4">Professional Profile</h2>
+                    <p class="lead mb-4">I am a passionate Full Stack Developer with expertise in creating modern, responsive web applications. With a strong foundation in both front-end and back-end technologies, I deliver comprehensive digital solutions.</p>
+                    
+                    <div class="personal-info">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="bi bi-person-circle text-primary"></i>
+                                    <div>
+                                        <h6>Full Name</h6>
+                                        <p class="mb-0">Collins Lukhale Mupalia</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="bi bi-telephone text-primary"></i>
+                                    <div>
+                                        <h6>Phone Number</h6>
+                                        <p class="mb-0">+254 703 715 677</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="bi bi-envelope text-primary"></i>
+                                    <div>
+                                        <h6>Email Address</h6>
+                                        <p class="mb-0">collinsmupalia123@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="bi bi-geo-alt text-primary"></i>
+                                    <div>
+                                        <h6>Location</h6>
+                                        <p class="mb-0">Nairobi, Kenya</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Phone Number</h3>
-                    <p>+254 703 715 677</p>
+                    
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary me-3">
+                            <i class="bi bi-download me-2"></i>Download CV
+                        </a>
+                        <a href="#portfolio" class="btn btn-outline-primary">
+                            View Portfolio
+                        </a>
+                    </div>
                 </div>
-                <div class="detail-card">
-                    <div class="detail-icon">
-                        <i class="fas fa-envelope"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-3">TECHNICAL SKILLS</span>
+                <h2 class="display-5 fw-bold mb-4">My Expertise</h2>
+                <p class="lead">Mastering modern technologies to deliver exceptional results</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Frontend Development</h5>
+                            <span class="text-primary">95%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                        </div>
+                        <div class="skill-tags mt-3">
+                            <span class="badge bg-light text-dark me-2 mb-2">HTML5</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">CSS3</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">JavaScript</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">React</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Bootstrap</span>
+                        </div>
                     </div>
-                    <h3>Email Address</h3>
-                    <p>collinsmupalia123@gmail.com</p>
                 </div>
-                <div class="detail-card">
-                    <div class="detail-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Backend Development</h5>
+                            <span class="text-primary">90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                        </div>
+                        <div class="skill-tags mt-3">
+                            <span class="badge bg-light text-dark me-2 mb-2">Node.js</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Python</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">PHP</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">MySQL</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">MongoDB</span>
+                        </div>
                     </div>
-                    <h3>Location</h3>
-                    <p>Nairobi, Kenya</p>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>UI/UX Design</h5>
+                            <span class="text-primary">85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                        <div class="skill-tags mt-3">
+                            <span class="badge bg-light text-dark me-2 mb-2">Figma</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Adobe XD</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Wireframing</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>DevOps & Tools</h5>
+                            <span class="text-primary">80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                        <div class="skill-tags mt-3">
+                            <span class="badge bg-light text-dark me-2 mb-2">Git</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Docker</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">AWS</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">CI/CD</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Linux</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio-section py-5">
         <div class="container">
-            <h2 class="section-title">My Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Responsive websites and web applications</p>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Cross-platform mobile applications</p>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>User-centered design solutions</p>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Online marketing strategies</p>
-                </div>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-3">PORTFOLIO</span>
+                <h2 class="display-5 fw-bold mb-4">My Recent Work</h2>
+                <p class="lead">Showcasing projects that demonstrate technical expertise and creative solutions</p>
             </div>
             
-            <!-- Project Showcase -->
-            <div class="project-showcase">
-                <h3 class="subsection-title">Featured Projects</h3>
-                <div class="projects-grid">
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250/3498db/ffffff?text=Project+1" alt="Project 1" class="project-image">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="E-Commerce Platform" class="img-fluid">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h4>E-Commerce Website</h4>
-                            <p>Full-featured online store with payment integration</p>
+                            <h4>E-Commerce Platform</h4>
+                            <p>Full-featured online store with payment integration and inventory management</p>
+                            <div class="project-tags">
+                                <span class="badge bg-primary">React</span>
+                                <span class="badge bg-primary">Node.js</span>
+                                <span class="badge bg-primary">MongoDB</span>
+                            </div>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250/2ecc71/ffffff?text=Project+2" alt="Project 2" class="project-image">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business Dashboard" class="img-fluid">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h4>Business Portfolio</h4>
-                            <p>Professional portfolio website for a corporate client</p>
+                            <h4>Business Analytics Dashboard</h4>
+                            <p>Real-time data visualization and analytics platform for business intelligence</p>
+                            <div class="project-tags">
+                                <span class="badge bg-primary">Vue.js</span>
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">Chart.js</span>
+                            </div>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Project+3" alt="Project 3" class="project-image">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mobile App" class="img-fluid">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h4>Mobile Application</h4>
-                            <p>Cross-platform mobile app for service delivery</p>
+                            <h4>Fitness Mobile App</h4>
+                            <p>Cross-platform fitness application with workout tracking and nutrition planning</p>
+                            <div class="project-tags">
+                                <span class="badge bg-primary">React Native</span>
+                                <span class="badge bg-primary">Firebase</span>
+                                <span class="badge bg-primary">Redux</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,209 +328,200 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services-section py-5">
         <div class="container">
-            <h2 class="section-title">My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-3">SERVICES</span>
+                <h2 class="display-5 fw-bold mb-4">What I Offer</h2>
+                <p class="lead">Comprehensive digital solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Custom website development using modern technologies and best practices</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>Responsive Design</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>Performance Optimization</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>SEO Friendly</li>
+                        </ul>
                     </div>
-                    <h3>Web Development</h3>
-                    <p>Custom website development using HTML, CSS, JavaScript, and modern frameworks</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h4>Mobile App Development</h4>
+                        <p>Cross-platform mobile applications for iOS and Android devices</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>React Native</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>UI/UX Design</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>App Store Deployment</li>
+                        </ul>
                     </div>
-                    <h3>E-Commerce Solutions</h3>
-                    <p>Online store development with secure payment integration and inventory management</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>User-centered design solutions that enhance user experience and engagement</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>Wireframing</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>Prototyping</li>
+                            <li><i class="bi bi-check-circle text-primary me-2"></i>User Testing</li>
+                        </ul>
                     </div>
-                    <h3>SEO Optimization</h3>
-                    <p>Improve your website's visibility on search engines and increase organic traffic</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>User-centered design solutions for better user experience and engagement</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Cross-platform mobile applications for iOS and Android devices</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Comprehensive online marketing strategies to grow your business</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Feedback Section -->
-    <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
         <div class="container">
-            <h2 class="section-title">Contact & Feedback</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="profile-section">
-                        <div class="contact-profile-img">
-                            <img src="images/IMG-20240812-WA0000.jpg" alt="Collins Mupalia" onerror="this.src='https://via.placeholder.com/150x150/3498db/ffffff?text=CM';">
-                        </div>
-                        <h3>Collins Lukhale Mupalia</h3>
-                        <p class="contact-title">Web Developer & Digital Solutions Expert</p>
-                    </div>
-                    
-                    <div class="contact-details-list">
-                        <div class="contact-detail">
-                            <i class="fas fa-user"></i>
-                            <div>
-                                <h4>Full Name</h4>
-                                <p>Collins Lukhale Mupalia</p>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary mb-3">CONTACT</span>
+                <h2 class="display-5 fw-bold mb-4">Get In Touch</h2>
+                <p class="lead">Have a project in mind? Let's discuss how we can work together</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form" data-aos="fade-up">
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <label for="name"><i class="bi bi-person me-2"></i>Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <label for="email"><i class="bi bi-envelope me-2"></i>Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject"><i class="bi bi-chat-text me-2"></i>Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                                        <label for="message"><i class="bi bi-chat-left-text me-2"></i>Your Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone Number</h4>
+                        </form>
+                        <div id="formMessage" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row g-4">
+                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="50">
+                            <div class="contact-info-item">
+                                <i class="bi bi-telephone text-primary"></i>
+                                <h5>Phone</h5>
                                 <p>+254 703 715 677</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email Address</h4>
+                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-info-item">
+                                <i class="bi bi-envelope text-primary"></i>
+                                <h5>Email</h5>
                                 <p>collinsmupalia123@gmail.com</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
+                        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="150">
+                            <div class="contact-info-item">
+                                <i class="bi bi-geo-alt text-primary"></i>
+                                <h5>Location</h5>
                                 <p>Nairobi, Kenya</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="social-links">
-                        <h4>Connect With Me</h4>
-                        <div class="social-icons">
-                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="feedback-form">
-                    <h3>Send Feedback</h3>
-                    <p>I'd love to hear from you! Please share your feedback or inquiry.</p>
-                    
-                    <form id="feedbackForm">
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject of your message">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="rating">Rating (Optional)</label>
-                            <div class="rating-stars">
-                                <input type="radio" id="star5" name="rating" value="5">
-                                <label for="star5"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="rating" value="4">
-                                <label for="star4"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="rating" value="3">
-                                <label for="star3"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="rating" value="2">
-                                <label for="star2"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star1" name="rating" value="1">
-                                <label for="star1"><i class="fas fa-star"></i></label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                        
-                        <div class="form-note">
-                            <p>* Required fields</p>
-                        </div>
-                    </form>
-                    
-                    <div id="formMessage" class="form-message"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer-section py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="footer-profile">
-                        <img src="images/IMG-20240812-WA0000.jpg" alt="Collins Mupalia" onerror="this.src='https://via.placeholder.com/80x80/3498db/ffffff?text=CM';">
-                        <div>
-                            <h3>Collins Lukhale Mupalia</h3>
-                            <p>Web Developer & Digital Solutions Expert</p>
-                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <h3 class="text-white">Collins Mupalia</h3>
+                        <p class="text-light">Full Stack Developer</p>
                     </div>
                 </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact Details</h4>
-                    <p><i class="fas fa-user"></i> Collins Lukhale Mupalia</p>
-                    <p><i class="fas fa-phone"></i> +254 703 715 677</p>
-                    <p><i class="fas fa-envelope"></i> collinsmupalia123@gmail.com</p>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="social-links text-center">
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <div class="col-lg-4">
+                    <div class="footer-contact text-lg-end">
+                        <p class="text-light mb-1">
+                            <i class="bi bi-envelope me-2"></i>collinsmupalia123@gmail.com
+                        </p>
+                        <p class="text-light mb-0">
+                            <i class="bi bi-phone me-2"></i>+254 703 715 677
+                        </p>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 Collins Lukhale Mupalia. All rights reserved.</p>
-                <p>Designed and developed by Collins Lukhale Mupalia</p>
+            <hr class="my-5 border-light">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-light mb-0">
+                        &copy; 2026 Collins Lukhale Mupalia. All rights reserved. 
+                        <span class="d-block d-md-inline mt-2 mt-md-0">Designed and developed by Collins Lukhale Mupalia</span>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
