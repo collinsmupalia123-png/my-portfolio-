@@ -3,342 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Alex Chen - Portfolio</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --primary-color: #6c63ff;
-            --secondary-color: #ff6584;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #fff;
-            min-height: 100vh;
-            background-attachment: fixed;
-        }
-        
-        /* Glass Effect */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        /* Profile Image Circle */
-        .profile-img-container {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            padding: 5px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.3);
-            transition: all 0.4s ease;
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 12px 35px rgba(108, 99, 255, 0.5);
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: rgba(26, 26, 46, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-        }
-        
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            padding: 120px 0 80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #fff, var(--primary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            color: #ccc;
-        }
-        
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-        }
-        
-        /* Skills */
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 5px;
-            width: 0;
-            transition: width 1.5s ease;
-        }
-        
-        /* Project Cards */
-        .project-card {
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        .project-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.1);
-        }
-        
-        /* Contact Form */
-        .form-control {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 12px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
-            color: #fff;
-        }
-        
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        /* Buttons */
-        .btn-primary-custom {
-            background: linear-gradient(45deg, var(--primary-color), #8a84ff);
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
-            color: white;
-        }
-        
-        .btn-outline-custom {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 28px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-custom:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
-        }
-        
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            color: #fff;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .social-icon:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-            color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .profile-img-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .profile-img-container {
-                width: 130px;
-                height: 130px;
-            }
-        }
-    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <span style="color: var(--primary-color);">Portfolio</span>
+            <a class="navbar-brand" href="#">
+                <span class="brand-name">Alex Chen</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -346,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link active" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -356,6 +38,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -369,26 +54,44 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 order-lg-1 order-2 text-center text-lg-start">
-                    <h6 class="text-primary mb-3">Hello, I'm</h6>
-                    <h1 class="hero-title">John Anderson</h1>
-                    <h3 class="mb-3">Full Stack Developer</h3>
-                    <p class="hero-subtitle">I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive.</p>
-                    <div class="mt-4">
-                        <a href="#contact" class="btn btn-primary-custom me-3">Hire Me</a>
-                        <a href="#projects" class="btn btn-outline-custom">View Projects</a>
-                    </div>
-                    <div class="social-icons justify-content-lg-start">
-                        <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="hero-content">
+                        <h6 class="hero-subtitle">Hello, I'm</h6>
+                        <h1 class="hero-title">Alex Chen</h1>
+                        <h3 class="hero-role">Full Stack Developer & UI/UX Designer</h3>
+                        <p class="hero-description">
+                            I create beautiful, functional web experiences with modern technologies. 
+                            Passionate about solving complex problems and building digital solutions 
+                            that make a difference.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary-custom me-3">Hire Me</a>
+                            <a href="resume.pdf" class="btn btn-secondary-custom" download>Download CV</a>
+                        </div>
+                        <div class="social-icons mt-4">
+                            <a href="https://github.com/alexchen" target="_blank" class="social-icon">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/alexchen" target="_blank" class="social-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/alexchen" target="_blank" class="social-icon">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a href="mailto:alex.chen@example.com" class="social-icon">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                    <div class="profile-img-container fade-in">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Profile Image" class="profile-img">
+                <div class="col-lg-6 order-lg-2 order-1 text-center">
+                    <div class="profile-container">
+                        <div class="profile-img-wrapper">
+                            <img src="images/profile.jpg" alt="Alex Chen" class="profile-img">
+                            <div class="profile-badge">
+                                <span>5+ Years Experience</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -396,42 +99,71 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="row">
                 <div class="col-lg-6 mb-4">
-                    <div class="glass-card p-4 h-100">
-                        <h4 class="mb-3">Who I Am</h4>
-                        <p>I'm a passionate Full Stack Developer with 5+ years of experience building web applications. I specialize in creating responsive, user-friendly interfaces with clean, efficient code.</p>
-                        <p>My expertise includes React, Node.js, Python, and modern CSS frameworks. I enjoy solving complex problems and creating solutions that make a difference.</p>
-                        <div class="mt-4">
-                            <h5>Personal Info</h5>
-                            <div class="row mt-3">
-                                <div class="col-6">
-                                    <p><strong>Name:</strong> John Anderson</p>
-                                    <p><strong>Email:</strong> john@example.com</p>
-                                </div>
-                                <div class="col-6">
-                                    <p><strong>Location:</strong> San Francisco, CA</p>
-                                    <p><strong>Freelance:</strong> Available</p>
-                                </div>
+                    <div class="glass-card about-card">
+                        <h3 class="card-title">Personal Details</h3>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <span class="info-label">Name:</span>
+                                <span class="info-value">Alex Chen</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">alex.chen@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Phone:</span>
+                                <span class="info-value">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Location:</span>
+                                <span class="info-value">San Francisco, California</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Education:</span>
+                                <span class="info-value">M.S. Computer Science, Stanford University</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Languages:</span>
+                                <span class="info-value">English (Native), Spanish (Fluent), Mandarin (Basic)</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="glass-card p-4 h-100">
-                        <h4 class="mb-4">My Experience</h4>
-                        <div class="experience-item mb-4">
-                            <h5>Senior Web Developer</h5>
-                            <p class="text-muted">Tech Solutions Inc. | 2020 - Present</p>
-                            <p>Led a team of 5 developers in building enterprise web applications. Improved application performance by 40%.</p>
-                        </div>
-                        <div class="experience-item">
-                            <h5>Frontend Developer</h5>
-                            <p class="text-muted">Digital Agency | 2018 - 2020</p>
-                            <p>Developed responsive websites and web applications for various clients across different industries.</p>
+                    <div class="glass-card about-card">
+                        <h3 class="card-title">My Story</h3>
+                        <p class="card-text">
+                            I'm a passionate Full Stack Developer with over 5 years of experience building 
+                            web applications and digital solutions. My journey began at Stanford University, 
+                            where I fell in love with creating elegant solutions to complex problems.
+                        </p>
+                        <p class="card-text">
+                            I specialize in React, Node.js, Python, and modern cloud technologies. 
+                            I've worked with startups and Fortune 500 companies, delivering projects 
+                            that have impacted millions of users worldwide.
+                        </p>
+                        <p class="card-text">
+                            When I'm not coding, you can find me hiking in the Bay Area, practicing 
+                            photography, or contributing to open-source projects.
+                        </p>
+                        <div class="stats mt-4">
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -440,88 +172,92 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="glass-card p-4 mb-4">
-                        <h4 class="mb-4">Technical Skills</h4>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
+                    <div class="glass-card skill-category">
+                        <h4 class="skill-category-title">Frontend Development</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React & Redux</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="95"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript/TypeScript</span>
+                                    <span class="skill-percent">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="92"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span>90%</span>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 & CSS3</span>
+                                    <span class="skill-percent">98%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="98"></div>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>React</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Node.js</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="80"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Vue.js</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="glass-card p-4">
-                        <h4 class="mb-4">Professional Skills</h4>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Problem Solving</span>
-                                <span>95%</span>
+                    <div class="glass-card skill-category">
+                        <h4 class="skill-category-title">Backend & Tools</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js & Express</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="95"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python & Django</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Team Collaboration</span>
-                                <span>90%</span>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB & PostgreSQL</span>
+                                    <span class="skill-percent">87%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="87"></div>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Communication</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Project Management</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="80"></div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">AWS & Docker</span>
+                                    <span class="skill-percent">82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="82"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -531,48 +267,81 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="glass-card project-card">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="E-commerce Website" class="project-img">
-                        <div class="p-4">
-                            <h5>E-commerce Platform</h5>
-                            <p class="text-muted">Full-stack e-commerce solution with React and Node.js</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-2">React</span>
-                                <span class="badge bg-secondary">Node.js</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="E-commerce Platform">
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">NexusMart E-commerce</h5>
+                            <p class="project-description">
+                                Full-featured e-commerce platform with React frontend, Node.js backend, 
+                                and real-time inventory management.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="glass-card project-card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Analytics Dashboard" class="project-img">
-                        <div class="p-4">
-                            <h5>Analytics Dashboard</h5>
-                            <p class="text-muted">Real-time data visualization with interactive charts</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-2">Vue.js</span>
-                                <span class="badge bg-secondary">Chart.js</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Analytics Dashboard">
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">DataViz Analytics</h5>
+                            <p class="project-description">
+                                Real-time data visualization dashboard with interactive charts, 
+                                custom reporting, and team collaboration features.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">WebSocket</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="glass-card project-card">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                             alt="Mobile App" class="project-img">
-                        <div class="p-4">
-                            <h5>Fitness Tracker App</h5>
-                            <p class="text-muted">Cross-platform mobile app for fitness tracking</p>
-                            <div class="mt-3">
-                                <span class="badge bg-primary me-2">React Native</span>
-                                <span class="badge bg-secondary">Firebase</span>
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Fitness App">
+                        </div>
+                        <div class="project-content">
+                            <h5 class="project-title">FitTrack Pro</h5>
+                            <p class="project-description">
+                                Cross-platform fitness tracking app with workout plans, progress 
+                                analytics, and social sharing features.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Redux</span>
+                                <span class="tech-tag">Apple Health</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">App Store</a>
+                                <a href="#" class="project-link">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -581,14 +350,62 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date">2021 - Present</div>
+                        <h4 class="timeline-title">Senior Full Stack Developer</h4>
+                        <h5 class="timeline-company">TechVision Inc., San Francisco</h5>
+                        <ul class="timeline-details">
+                            <li>Led development of enterprise SaaS platform serving 10,000+ users</li>
+                            <li>Reduced page load time by 60% through code optimization</li>
+                            <li>Mentored 4 junior developers and improved team productivity by 30%</li>
+                            <li>Implemented CI/CD pipeline reducing deployment time by 70%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <h4 class="timeline-title">Frontend Developer</h4>
+                        <h5 class="timeline-company">Digital Innovations Agency, Palo Alto</h5>
+                        <ul class="timeline-details">
+                            <li>Developed responsive web applications for Fortune 500 clients</li>
+                            <li>Built component library used across 15+ client projects</li>
+                            <li>Improved website performance scores by 40% on Google Lighthouse</li>
+                            <li>Collaborated with UX designers to implement pixel-perfect designs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date">2017 - 2019</div>
+                        <h4 class="timeline-title">Web Developer</h4>
+                        <h5 class="timeline-company">Startup Labs, Silicon Valley</h5>
+                        <ul class="timeline-details">
+                            <li>Built MVP products for early-stage startups</li>
+                            <li>Implemented responsive designs for mobile-first approach</li>
+                            <li>Integrated third-party APIs and payment systems</li>
+                            <li>Managed deployment and maintenance of client websites</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="glass-card p-4">
-                        <form id="contactForm">
+                    <div class="glass-card contact-card">
+                        <form id="contactForm" class="contact-form">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <input type="text" class="form-control" placeholder="Your Name" required>
@@ -608,91 +425,73 @@
                     </div>
                 </div>
             </div>
+            <div class="contact-info mt-5">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="info-card glass-card text-center">
+                            <i class="bi bi-envelope info-icon"></i>
+                            <h5>Email</h5>
+                            <p>alex.chen@example.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="info-card glass-card text-center">
+                            <i class="bi bi-telephone info-icon"></i>
+                            <h5>Phone</h5>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="info-card glass-card text-center">
+                            <i class="bi bi-geo-alt info-icon"></i>
+                            <h5>Location</h5>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-4">
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2023 John Anderson. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="brand-name">Alex Chen</span>
+                </div>
+                <p class="footer-text">
+                    Full Stack Developer creating digital experiences that matter.
+                </p>
+                <div class="social-icons">
+                    <a href="https://github.com/alexchen" target="_blank" class="social-icon">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alexchen" target="_blank" class="social-icon">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/alexchen" target="_blank" class="social-icon">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="https://dribbble.com/alexchen" target="_blank" class="social-icon">
+                        <i class="bi bi-dribbble"></i>
+                    </a>
+                </div>
+                <p class="copyright">
+                    &copy; 2023 Alex Chen. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Animate skill bars on scroll
-        const animateSkillBars = () => {
-            const skillBars = document.querySelectorAll('.skill-level');
-            skillBars.forEach(bar => {
-                const level = bar.getAttribute('data-level');
-                bar.style.width = '0%';
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if(entry.isIntersecting) {
-                            setTimeout(() => {
-                                bar.style.width = level + '%';
-                            }, 300);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(bar);
-            });
-        };
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if(window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                navbar.style.backgroundColor = 'rgba(26, 26, 46, 0.8)';
-            }
-        });
-        
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            animateSkillBars();
-            
-            // Add fade-in animation to sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.add('fade-in');
-            });
-        });
-    </script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
