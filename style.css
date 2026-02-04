@@ -1,4 +1,4 @@
-/* Custom CSS for Bootstrap Portfolio */
+/* Custom CSS for Collins Mupalia Portfolio */
 
 :root {
     --primary-color: #667eea;
@@ -34,21 +34,30 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     transition: all 0.3s ease;
+    z-index: 1030;
 }
 
 .navbar.scrolled {
     padding: 0.5rem 0;
     background: rgba(26, 37, 48, 0.98);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
     font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-profile {
+    border: 2px solid var(--primary-color);
 }
 
 .nav-link {
     font-weight: 500;
     margin: 0 0.5rem;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .nav-link::after {
@@ -68,12 +77,17 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero-section::before {
@@ -102,11 +116,18 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-.hero-image img {
+.profile-main {
     width: 350px;
     height: 350px;
     object-fit: cover;
-    border: 5px solid rgba(255, 255, 255, 0.2);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-profile {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
 .floating-elements {
@@ -122,6 +143,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 60px;
     height: 60px;
     animation: floatElement 3s infinite ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .floating-element.element-1 {
@@ -151,6 +173,52 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+    color: white;
+}
+
+.social-icon-footer {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-footer:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    color: white;
+}
+
 /* About Section */
 .about-image {
     position: relative;
@@ -170,6 +238,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
     animation: pulse 2s infinite;
+    border: 5px solid white;
 }
 
 @keyframes pulse {
@@ -181,37 +250,44 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.icon-box {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+.personal-info p {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.personal-info p:last-child {
+    border-bottom: none;
 }
 
 /* Skills Section */
 .skill-item .progress {
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.skill-item .progress-bar {
+.progress-animated {
     border-radius: 5px;
+    width: 0;
     transition: width 1.5s ease-in-out;
 }
 
 .tech-card {
     transition: all 0.3s ease;
     background: white;
+    border: 1px solid #e9ecef;
 }
 
 .tech-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color);
 }
 
 /* Achievement Section */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
 .achievement-item {
     position: relative;
     padding: 2rem;
@@ -219,11 +295,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .achievement-item:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .achievement-number {
@@ -248,10 +326,15 @@ h1, h2, h3, h4, h5, h6 {
 .testimonial-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color);
 }
 
 .quote-icon {
     position: relative;
+}
+
+.client-avatar {
+    flex-shrink: 0;
 }
 
 /* Projects */
@@ -261,6 +344,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card:hover {
     transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
 }
 
 .project-image {
@@ -285,22 +369,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Contact */
-.contact-info {
+.contact-item {
     transition: all 0.3s ease;
     background: white;
+    border: 1px solid #e9ecef;
 }
 
-.contact-info:hover {
+.contact-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--primary-color);
 }
 
 .contact-icon i {
     transition: all 0.3s ease;
 }
 
-.contact-info:hover .contact-icon i {
+.contact-item:hover .contact-icon i {
     transform: scale(1.2);
+    color: var(--primary-color) !important;
 }
 
 /* Form */
@@ -317,12 +404,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Footer */
-.social-icons a {
+.hover-text-primary {
     transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-    transform: translateY(-5px);
+.hover-text-primary:hover {
+    color: var(--primary-color) !important;
+    padding-left: 5px;
 }
 
 /* Back to Top */
@@ -336,11 +424,22 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Hover effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Responsive Design */
@@ -351,10 +450,14 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 100vh;
     }
     
-    .hero-image img {
+    .profile-main {
         width: 250px;
         height: 250px;
         margin-top: 2rem;
+    }
+    
+    .about-profile {
+        height: 400px;
     }
     
     .display-3 {
@@ -369,6 +472,11 @@ h1, h2, h3, h4, h5, h6 {
         width: 100px;
         height: 100px;
         right: 0;
+        bottom: 0;
+    }
+    
+    .experience-badge span.fs-1 {
+        font-size: 1.5rem !important;
     }
     
     .achievement-item {
@@ -378,12 +486,21 @@ h1, h2, h3, h4, h5, h6 {
     .achievement-number {
         font-size: 2.5rem;
     }
+    
+    .floating-element {
+        width: 45px;
+        height: 45px;
+    }
 }
 
 @media (max-width: 576px) {
-    .hero-image img {
+    .profile-main {
         width: 200px;
         height: 200px;
+    }
+    
+    .about-profile {
+        height: 300px;
     }
     
     .btn-lg {
@@ -393,6 +510,14 @@ h1, h2, h3, h4, h5, h6 {
     
     .section-padding {
         padding: 3rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.5rem;
     }
 }
 
@@ -417,30 +542,58 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5rem 0;
 }
 
-.bg-gradient-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
 .text-gradient {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Hover effects */
-.hover-lift {
-    transition: transform 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-}
-
-/* Card enhancements */
-.card-hover {
+/* Button enhancements */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
     transition: all 0.3s ease;
 }
 
-.card-hover:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: var(--primary-color);
+}
+
+/* CV Button */
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #34d399);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Profile image fallback */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loaded {
+    opacity: 1;
+}
+
+/* Section spacing */
+section {
+    scroll-margin-top: 80px;
 }
