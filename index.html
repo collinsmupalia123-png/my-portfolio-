@@ -1,146 +1,599 @@
-<!-- Portfolio Enhancement HTML Elements -->
-<!-- Add these elements to your portfolio where you want to fill empty space -->
-<!-- You can add these anywhere in your existing HTML where you have empty space -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collins Mupalia | Web Developer Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">Collins<span class="text-primary">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Testimonial Section - Add before footer -->
-<section id="testimonials" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">What Clients Say</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-card">
-                    <p>"Collins delivered exceptional work on our web project. His attention to detail and professionalism were impressive!"</p>
-                    <div class="d-flex align-items-center mt-3">
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-0">John Smith</h5>
-                            <p class="text-muted mb-0">CEO, TechCorp Solutions</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h6 class="text-primary mb-3">Hello, I'm</h6>
+                    <h1 class="display-3 fw-bold mb-4">Collins Mupalia</h1>
+                    <h2 class="h3 mb-4">Full Stack <span class="text-primary">Web Developer</span></h2>
+                    <p class="lead mb-5">I create beautiful, functional websites and web applications that deliver exceptional user experiences and drive business results.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#projects" class="btn btn-primary btn-lg px-4 py-3">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3">Hire Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image position-relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                             alt="Collins Mupalia" class="img-fluid rounded-circle shadow-lg">
+                        <div class="floating-elements">
+                            <div class="floating-element element-1 bg-primary rounded-circle d-flex align-items-center justify-content-center">
+                                <span class="text-white fw-bold">3+</span>
+                            </div>
+                            <div class="floating-element element-2 bg-success rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-code-slash text-white"></i>
+                            </div>
+                            <div class="floating-element element-3 bg-warning rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-award text-white"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-card">
-                    <p>"Working with Collins was a great experience. He understood our requirements perfectly and delivered ahead of schedule."</p>
-                    <div class="d-flex align-items-center mt-3">
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="about-image position-relative">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                             alt="About Collins" class="img-fluid rounded shadow-lg">
+                        <div class="experience-badge">
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <span class="fs-1 fw-bold">3+</span>
+                                <span class="text-uppercase">Years Experience</span>
+                            </div>
                         </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-0">Sarah Johnson</h5>
-                            <p class="text-muted mb-0">Marketing Director, InnovateCo</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="text-primary mb-2">About Me</h6>
+                    <h2 class="display-5 fw-bold mb-4">Crafting Digital Experiences</h2>
+                    <p class="lead mb-4">I'm a passionate full-stack web developer with over 3 years of experience creating dynamic, responsive websites and web applications.</p>
+                    <p class="mb-4">My expertise spans both front-end and back-end technologies, allowing me to build complete web solutions that are both visually appealing and technically robust.</p>
+                    <div class="row mt-5">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-primary me-3">
+                                    <i class="bi bi-code-slash text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Web Development</h5>
+                                    <p class="text-muted mb-0">Full stack solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-success me-3">
+                                    <i class="bi bi-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Responsive Design</h5>
+                                    <p class="text-muted mb-0">Mobile-first approach</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-warning me-3">
+                                    <i class="bi bi-palette text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">UI/UX Design</h5>
+                                    <p class="text-muted mb-0">User-centered design</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-info me-3">
+                                    <i class="bi bi-gear text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Maintenance</h5>
+                                    <p class="text-muted mb-0">Ongoing support</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-card">
-                    <p>"The website Collins created for us increased our online conversions by 40%. Highly recommended!"</p>
-                    <div class="d-flex align-items-center mt-3">
-                        <div class="flex-shrink-0">
-                            <i class="bi bi-person-circle fs-1 text-primary"></i>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary mb-2">My Skills</h6>
+                    <h2 class="display-5 fw-bold mb-3">Technical Expertise</h2>
+                    <p class="lead">I specialize in modern web technologies and frameworks to build high-quality digital products.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">HTML/CSS</h5>
+                            <span class="text-primary fw-bold">95%</span>
                         </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-0">Michael Chen</h5>
-                            <p class="text-muted mb-0">Founder, StartupXYZ</p>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">JavaScript</h5>
+                            <span class="text-primary fw-bold">85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">React</h5>
+                            <span class="text-primary fw-bold">80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-5">
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">UI/UX Design</h5>
+                            <span class="text-primary fw-bold">90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">Bootstrap</h5>
+                            <span class="text-primary fw-bold">95%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5 class="fw-bold">Node.js</h5>
+                            <span class="text-primary fw-bold">75%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card text-center p-4 rounded shadow-sm">
+                        <i class="bi bi-filetype-html display-6 text-primary mb-3"></i>
+                        <h5 class="fw-bold">HTML5</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card text-center p-4 rounded shadow-sm">
+                        <i class="bi bi-filetype-css display-6 text-primary mb-3"></i>
+                        <h5 class="fw-bold">CSS3</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card text-center p-4 rounded shadow-sm">
+                        <i class="bi bi-filetype-js display-6 text-primary mb-3"></i>
+                        <h5 class="fw-bold">JavaScript</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-card text-center p-4 rounded shadow-sm">
+                        <i class="bi bi-bootstrap display-6 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Bootstrap</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Section -->
+    <section id="achievements" class="py-5 text-white" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-light mb-2">My Achievements</h6>
+                    <h2 class="display-5 fw-bold mb-3">By The Numbers</h2>
+                    <p class="lead opacity-75">Delivering value and results for clients across various industries.</p>
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="achievement-item">
+                        <div class="achievement-number display-4 fw-bold mb-2" data-count="15">0</div>
+                        <div class="achievement-plus display-6 fw-bold">+</div>
+                        <p class="text-uppercase opacity-75">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="achievement-item">
+                        <div class="achievement-number display-4 fw-bold mb-2" data-count="8">0</div>
+                        <div class="achievement-plus display-6 fw-bold">+</div>
+                        <p class="text-uppercase opacity-75">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="achievement-item">
+                        <div class="achievement-number display-4 fw-bold mb-2" data-count="3">0</div>
+                        <div class="achievement-plus display-6 fw-bold">+</div>
+                        <p class="text-uppercase opacity-75">Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="achievement-item">
+                        <div class="achievement-number display-4 fw-bold mb-2" data-count="100">0</div>
+                        <div class="achievement-percent display-6 fw-bold">%</div>
+                        <p class="text-uppercase opacity-75">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary mb-2">Testimonials</h6>
+                    <h2 class="display-5 fw-bold mb-3">What Clients Say</h2>
+                    <p class="lead">Don't just take my word for it - hear what my clients have to say about working with me.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card h-100 p-4 rounded shadow-sm">
+                        <div class="quote-icon mb-4">
+                            <i class="bi bi-quote display-4 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"Collins delivered exceptional work on our web project. His attention to detail and professionalism were impressive!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-avatar me-3">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-white fw-bold">JS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-0">John Smith</h5>
+                                <p class="text-muted mb-0">CEO, TechCorp Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card h-100 p-4 rounded shadow-sm">
+                        <div class="quote-icon mb-4">
+                            <i class="bi bi-quote display-4 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"Working with Collins was a great experience. He understood our requirements perfectly and delivered ahead of schedule."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-avatar me-3">
+                                <div class="rounded-circle bg-success d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-white fw-bold">SJ</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">Marketing Director, InnovateCo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card h-100 p-4 rounded shadow-sm">
+                        <div class="quote-icon mb-4">
+                            <i class="bi bi-quote display-4 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"The website Collins created for us increased our online conversions by 40%. Highly recommended!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="client-avatar me-3">
+                                <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-white fw-bold">MC</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-0">Michael Chen</h5>
+                                <p class="text-muted mb-0">Founder, StartupXYZ</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Achievement Counters Section - Add after skills section -->
-<section id="achievements" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">My Achievements</h2>
-        <div class="row text-center">
-            <div class="col-md-3 col-6 mb-4">
-                <div class="achievement-item">
-                    <div class="stat-counter">15+</div>
-                    <p class="text-muted mb-0">Projects Completed</p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary mb-2">Portfolio</h6>
+                    <h2 class="display-5 fw-bold mb-3">My Recent Projects</h2>
+                    <p class="lead">Take a look at some of my latest work and see how I've helped clients achieve their goals.</p>
                 </div>
             </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="achievement-item">
-                    <div class="stat-counter">8+</div>
-                    <p class="text-muted mb-0">Happy Clients</p>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="project-image" style="height: 200px; background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);">
+                            <div class="h-100 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-laptop text-white display-1"></i>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="badge bg-primary mb-2">Web Development</span>
+                            <h5 class="card-title fw-bold">E-Commerce Platform</h5>
+                            <p class="card-text">A fully responsive e-commerce website with payment integration, user authentication, and admin dashboard.</p>
+                            <div class="d-flex mt-4">
+                                <span class="badge bg-light text-dark me-2">React</span>
+                                <span class="badge bg-light text-dark me-2">Node.js</span>
+                                <span class="badge bg-light text-dark">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="project-image" style="height: 200px; background: linear-gradient(45deg, #ff6b6b 0%, #ffa726 100%);">
+                            <div class="h-100 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-phone text-white display-1"></i>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="badge bg-success mb-2">UI/UX Design</span>
+                            <h5 class="card-title fw-bold">Mobile App Design</h5>
+                            <p class="card-text">User interface design for a fitness tracking mobile application with intuitive navigation and clean aesthetics.</p>
+                            <div class="d-flex mt-4">
+                                <span class="badge bg-light text-dark me-2">Figma</span>
+                                <span class="badge bg-light text-dark me-2">Adobe XD</span>
+                                <span class="badge bg-light text-dark">Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="project-card card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="project-image" style="height: 200px; background: linear-gradient(45deg, #4CAF50 0%, #8BC34A 100%);">
+                            <div class="h-100 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-shop text-white display-1"></i>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="badge bg-warning mb-2">Business Website</span>
+                            <h5 class="card-title fw-bold">Corporate Website</h5>
+                            <p class="card-text">A modern corporate website with CMS integration, blog functionality, and SEO optimization for better visibility.</p>
+                            <div class="d-flex mt-4">
+                                <span class="badge bg-light text-dark me-2">HTML/CSS</span>
+                                <span class="badge bg-light text-dark me-2">JavaScript</span>
+                                <span class="badge bg-light text-dark">WordPress</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="achievement-item">
-                    <div class="stat-counter">3+</div>
-                    <p class="text-muted mb-0">Years Experience</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-5 text-white" style="background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-3">Ready to Start Your Project?</h2>
+                    <p class="lead opacity-75">Let's work together to bring your ideas to life. I'm just a message away!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-primary btn-lg px-5 py-3 fw-bold">Get In Touch <i class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="achievement-item">
-                    <div class="stat-counter">100%</div>
-                    <p class="text-muted mb-0">Client Satisfaction</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h6 class="text-primary mb-2">Contact Me</h6>
+                    <h2 class="display-5 fw-bold mb-3">Let's Work Together</h2>
+                    <p class="lead">Have a project in mind? Get in touch and let's discuss how we can bring your vision to life.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="name" class="form-label fw-bold">Full Name</label>
+                                        <input type="text" class="form-control py-3" id="name" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="email" class="form-label fw-bold">Email Address</label>
+                                        <input type="email" class="form-control py-3" id="email" placeholder="john@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="subject" class="form-label fw-bold">Subject</label>
+                                    <input type="text" class="form-control py-3" id="subject" placeholder="Project Inquiry" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="form-label fw-bold">Message</label>
+                                    <textarea class="form-control py-3" id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg px-5 py-3 w-100">Send Message <i class="bi bi-send ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-info text-center p-4 rounded shadow-sm">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-envelope display-4 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">Email</h5>
+                        <p class="text-muted">collins@example.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-info text-center p-4 rounded shadow-sm">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-phone display-4 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">Phone</h5>
+                        <p class="text-muted">+1 (123) 456-7890</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-info text-center p-4 rounded shadow-sm">
+                        <div class="contact-icon mb-3">
+                            <i class="bi bi-geo-alt display-4 text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">Location</h5>
+                        <p class="text-muted">Port Moresby, Papua New Guinea</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Floating Contact Button for Mobile (Add before closing body tag) -->
-<a href="#contact" class="floating-button contact-float" title="Contact Me">
-    <i class="bi bi-chat-dots"></i>
-</a>
-
-<!-- Skills Progress Bars Enhancement (Add to your skills section) -->
-<div class="skill-progress-container mt-4">
-    <div class="skill-item">
-        <h5>HTML/CSS <span class="float-end">95%</span></h5>
-        <div class="progress">
-            <div class="progress-bar skill-bar" role="progressbar" style="width: 0%" data-width="95%"></div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a class="navbar-brand fw-bold fs-3 text-white" href="#">Collins<span class="text-primary">.</span></a>
+                    <p class="mt-3 opacity-75">Full stack web developer specializing in creating beautiful, functional digital experiences.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#home" class="text-white opacity-75 text-decoration-none">Home</a></li>
+                                <li class="mb-2"><a href="#about" class="text-white opacity-75 text-decoration-none">About</a></li>
+                                <li class="mb-2"><a href="#skills" class="text-white opacity-75 text-decoration-none">Skills</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#projects" class="text-white opacity-75 text-decoration-none">Projects</a></li>
+                                <li class="mb-2"><a href="#testimonials" class="text-white opacity-75 text-decoration-none">Testimonials</a></li>
+                                <li class="mb-2"><a href="#contact" class="text-white opacity-75 text-decoration-none">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4">Connect With Me</h5>
+                    <div class="social-icons d-flex gap-3">
+                        <a href="#" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0 opacity-75">&copy; <span id="currentYear"></span> Collins Mupalia. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 opacity-75">Designed with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="skill-item">
-        <h5>JavaScript <span class="float-end">85%</span></h5>
-        <div class="progress">
-            <div class="progress-bar skill-bar" role="progressbar" style="width: 0%" data-width="85%"></div>
-        </div>
-    </div>
-    <div class="skill-item">
-        <h5>React <span class="float-end">80%</span></h5>
-        <div class="progress">
-            <div class="progress-bar skill-bar" role="progressbar" style="width: 0%" data-width="80%"></div>
-        </div>
-    </div>
-    <div class="skill-item">
-        <h5>UI/UX Design <span class="float-end">90%</span></h5>
-        <div class="progress">
-            <div class="progress-bar skill-bar" role="progressbar" style="width: 0%" data-width="90%"></div>
-        </div>
-    </div>
-</div>
+    </footer>
 
-<!-- Call to Action Section (Add before footer) -->
-<section id="cta" class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-    <div class="container text-center">
-        <h2 class="mb-4">Ready to Start Your Project?</h2>
-        <p class="mb-4">Let's work together to bring your ideas to life. I'm just a message away!</p>
-        <a href="#contact" class="cta-button" style="background: white; color: #667eea;">Get In Touch</a>
-    </div>
-</section>
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top btn btn-primary rounded-circle d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up"></i>
+    </a>
 
-<!-- Meta tags for better mobile experience (Add to head section) -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="theme-color" content="#667eea">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<!-- Bootstrap and Icon CDNs (Add to head section) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-<!-- Link to enhancement CSS (Add to head section after Bootstrap) -->
-<link rel="stylesheet" href="enhancement.css">
-
-<!-- Add before closing body tag -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="enhancement.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
