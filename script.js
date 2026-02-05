@@ -10,10 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Profile image fallback
     const profileImage = document.getElementById('profileImage');
-    profileImage.addEventListener('error', function() {
-        this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80';
-        console.log('Profile image not found, using fallback image');
-    });
+    if (profileImage) {
+        profileImage.addEventListener('error', function() {
+            this.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80';
+            console.log('Profile image not found, using fallback image');
+        });
+    }
+    
+    // About image fallback
+    const aboutImage = document.querySelector('.about-image');
+    if (aboutImage) {
+        aboutImage.addEventListener('error', function() {
+            this.src = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80';
+            console.log('About image not found, using fallback image');
+        });
+    }
     
     // CV Download Button Functionality
     const cvDownloadBtn = document.getElementById('cvDownloadBtn');
@@ -45,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 ============================================
                 TECHNICAL SKILLS
                 ============================================
-                • Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap, Vue.js
+                • Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap
                 • Backend: Node.js, Express, MongoDB, REST APIs
-                • Tools: Git, VS Code, Figma, Adobe Creative Suite
+                • Tools: Git, VS Code, Figma
                 • Methodologies: Responsive Design, Mobile-First, Agile/Scrum
                 
                 ============================================
@@ -56,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Frontend Developer | Tech Solutions Kenya | 2021 - Present
                 - Developed responsive web applications using React and Bootstrap
                 - Improved website performance by 40% through optimization
-                - Collaborated with UI/UX designers to implement designs
+                - Collaborated with UI/UX designers to implement pixel-perfect designs
                 
                 Web Developer | Digital Solutions Africa | 2020 - 2021
                 - Built and maintained client websites using modern technologies
@@ -73,11 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 PROJECTS
                 ============================================
                 • E-commerce Website: Built with React and Node.js
-                • Finance Dashboard: Interactive data visualization
-                • Travel Blog: Responsive blog with image galleries
-                • Weather App: API integration with location detection
-                • Blog Platform: CMS for bloggers
-                • Social Media Dashboard: Analytics with real-time data
+                • Finance Dashboard: Interactive data visualization with Chart.js
+                • Travel Blog: Responsive blog with image galleries and maps
                 
                 ============================================
                 CERTIFICATIONS
@@ -98,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create a temporary link element
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'Collins_Lukhale_Mupalia_CV.txt';
+            link.download = 'Collins_Mupalia_CV.txt';
             
             // Append to the body, click, and remove
             document.body.appendChild(link);
@@ -148,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
                 
                 // Show success message
-                showNotification('Message sent successfully! I will get back to you soon.', 'success');
+                showNotification('Thank you! Your message has been sent. I will get back to you soon.', 'success');
                 
                 // Reset form
                 contactForm.reset();
@@ -159,15 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     email, 
                     subject, 
                     message,
-                    to: 'collinsmupalia123@gmail.com'
+                    to: 'collinsmupalia123@gmail.com',
+                    timestamp: new Date().toISOString()
                 });
-                
-                // In a real application, you would send this data to your server
-                // fetch('your-backend-endpoint', {
-                //     method: 'POST',
-                //     headers: { 'Content-Type': 'application/json' },
-                //     body: JSON.stringify({ name, email, subject, message })
-                // })
             }, 1500);
         });
     }
@@ -308,21 +310,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project card hover effect
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-        });
-    });
-    
-    // View project buttons
-    document.querySelectorAll('.view-project').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNotification('Project details would open here in a complete implementation', 'info');
+            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
         });
     });
     
@@ -340,14 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // WhatsApp specific functionality
-    document.querySelectorAll('.whatsapp').forEach(whatsappBtn => {
-        whatsappBtn.addEventListener('click', function() {
-            console.log('WhatsApp contact initiated for Collins Mupalia');
-            // You can add analytics tracking here
-        });
-    });
-    
     // Notification function
     function showNotification(message, type = 'success') {
         // Remove any existing notifications
@@ -358,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create notification element
         const notification = document.createElement('div');
-        notification.className = `custom-notification alert alert-${type === 'error' ? 'danger' : type === 'info' ? 'info' : 'success'}`;
+        notification.className = `custom-notification alert alert-${type === 'error' ? 'danger' : 'success'} border-0`;
         notification.textContent = message;
         
         // Style the notification
@@ -366,10 +352,11 @@ document.addEventListener('DOMContentLoaded', function() {
         notification.style.top = '20px';
         notification.style.right = '20px';
         notification.style.zIndex = '9999';
-        notification.style.padding = '15px 20px';
-        notification.style.borderRadius = '5px';
+        notification.style.padding = '12px 18px';
+        notification.style.borderRadius = '8px';
         notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
         notification.style.maxWidth = '300px';
+        notification.style.fontSize = '0.9rem';
         notification.style.animation = 'slideIn 0.3s ease-out';
         
         // Add to document
@@ -402,12 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.head.appendChild(style);
         }
     }
-    
-    // Add floating animation to profile badges
-    const profileBadges = document.querySelectorAll('.profile-badge');
-    profileBadges.forEach((badge, index) => {
-        badge.style.animationDelay = `${index * 0.5}s`;
-    });
     
     // Initialize with active nav link
     updateActiveNavLink();
