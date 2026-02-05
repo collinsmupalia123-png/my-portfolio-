@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collins Mupalia | Portfolio</title>
+    <title>Collins Mupalia - Portfolio</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,100 +12,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="brand-text">Collins Mupalia</span>
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="text-primary">Collins</span> Mupalia
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section d-flex align-items-center">
         <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h4 class="text-primary mb-3">Hello, I'm</h4>
-                    <h1 class="display-4 fw-bold mb-3">Collins Mupalia</h1>
-                    <h2 class="h3 mb-4">fullstack Developer,cybersecurity,IT Technician & UI/UX Designer</h2>
-I’m a computer science graduate specializing in web development and backend systems. I build clean, efficient, and scalable solutions with a focus on performance and user experience. Always learning, always improving.                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact" class="btn btn-primary btn-lg">
-                            <i class="fas fa-paper-plane me-2"></i>Hire Me
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-lg" id="downloadCV">
-                            <i class="fas fa-download me-2"></i>Download CV
-                        </a>
-                    </div>
-                    <div class="social-icons mt-5">
-                        <a href="https://wa.me/+1234567890?text=Hello%20Collins%20Mupalia" class="social-icon whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://github.com" class="social-icon github" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com" class="social-icon linkedin" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://twitter.com" class="social-icon twitter" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://facebook.com" class="social-icon facebook" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com" class="social-icon instagram" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Hello, I'm <span class="text-primary">Collins Mupalia</span></h1>
+                    <p class="lead mb-4">A passionate Web Developer,FullStack Developer,IT technician & Designer creating modern, responsive, and user-friendly websites and applications.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg me-3">Get In Touch</a>
+                    <!-- CV Download Button -->
+                    <a href="#" class="btn btn-outline-light btn-lg" id="cvDownloadBtn" download>
+                        <i class="fas fa-download me-2"></i>Download CV
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <!-- Circular Profile Picture -->
+                    <div class="profile-pic-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                             alt="Collins Mupalia" class="profile-img-circle">
                     </div>
                 </div>
-                <div class="col-lg-6 text-center" data-aos="fade-left">
-                    <div class="hero-image-container">
-                        <img src="profile.jpg" 
-                             alt="Collins Mupalia" class="hero-image">
-                        <div class="floating-badge experience-badge">
-                            <span class="number">3+</span>
-                            <span class="text">Years Experience</span>
-                        </div>
-                        <div class="floating-badge project-badge">
-                            <span class="number">50+</span>
-                            <span class="text">Projects Completed</span>
-                        </div>
+            </div>
+            
+            <!-- Social Media Icons in Hero Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="social-icons-hero d-flex justify-content-center flex-wrap">
+                        <a href="https://wa.me/+1234567890?text=Hello%20Collins%20Mupalia" class="social-icon whatsapp" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://github.com/collinsmupalia" class="social-icon github" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/collinsmupalia" class="social-icon linkedin" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/collinsmupalia" class="social-icon twitter" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/collinsmupalia" class="social-icon facebook" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/collinsmupalia" class="social-icon instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -113,39 +93,34 @@ I’m a computer science graduate specializing in web development and backend sy
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section py-5">
+    <section id="about" class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">About <span class="text-primary">Me</span></h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Get to know me better</p>
-                </div>
-            </div>
+            <h2 class="text-center mb-5 fw-bold">About <span class="text-primary">Me</span></h2>
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="about-image-container">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                             alt="About Collins" class="about-image">
+                             alt="Collins Working" class="img-fluid rounded">
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
+                <div class="col-lg-6">
                     <h3 class="mb-4">Passionate Developer Creating Digital Solutions</h3>
-                    <p class="mb-4">I'm a dedicated frontend developer with over 3 years of experience building responsive, user-friendly websites and applications. My expertise includes HTML5, CSS3, JavaScript, and modern frameworks like React and Bootstrap.</p>
-                    <p class="mb-4">I believe in creating digital experiences that are not only visually appealing but also functional and accessible to all users. I'm constantly learning and adapting to new technologies to stay ahead in the ever-evolving web development landscape.</p>
+                    <p class="mb-3">I am a dedicated web developer with experience in creating dynamic and beautiful web applications. I specialize in front-end technologies but also have a solid understanding of back-end development.</p>
+                    <p class="mb-4">My goal is to build applications that are not only functional but also provide an exceptional user experience. I'm constantly learning new technologies and improving my skills.</p>
                     
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <ul class="list-unstyled about-list">
                                 <li><i class="fas fa-check-circle text-primary me-2"></i> Responsive Design</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i> Modern Frameworks</li>
                                 <li><i class="fas fa-check-circle text-primary me-2"></i> Clean Code</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i> Modern Frameworks</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled about-list">
                                 <li><i class="fas fa-check-circle text-primary me-2"></i> Performance Optimization</li>
-                                <li><i class="fas fa-check-circle text-primary me-2"></i> Cross-Browser Compatibility</li>
                                 <li><i class="fas fa-check-circle text-primary me-2"></i> SEO Best Practices</li>
+                                <li><i class="fas fa-check-circle text-primary me-2"></i> Cross-Browser Compatibility</li>
                             </ul>
                         </div>
                     </div>
@@ -157,107 +132,59 @@ I’m a computer science graduate specializing in web development and backend sy
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills-section py-5">
+    <section id="skills" class="py-5">
         <div class="container">
+            <h2 class="text-center mb-5 fw-bold">My <span class="text-primary">Skills</span></h2>
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">My <span class="text-primary">Skills</span></h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Technologies I work with</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6 mb-5" data-aos="fade-right">
-                    <h3 class="mb-4">Technical Skills</h3>
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>HTML5 & CSS3</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>JavaScript</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Bootstrap</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>React.js</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 shadow">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                            <h4 class="card-title">FullStack Developer</h4>
+                            <p class="card-text">HTML5, CSS3, JavaScript, Bootstrap, React.js</p>
+                            <div class="skill-bar mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Expert</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-4">Professional Skills</h3>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="card skill-card h-100 text-center">
-                                <div class="card-body">
-                                    <div class="skill-icon mb-3">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h5 class="card-title">Web Development</h5>
-                                    <p class="card-text">Building responsive and interactive websites with clean, efficient code.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 shadow">
+                        <div class="card-body">
+                            <i class="fas fa-server fa-3x text-primary mb-3"></i>
+                            <h4 class="card-title">Backend Development</h4>
+                            <p class="card-text">Node.js, Express, MongoDB, REST APIs, MySQL</p>
+                            <div class="skill-bar mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Advanced</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" style="width: 85%"></div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="card skill-card h-100 text-center">
-                                <div class="card-body">
-                                    <div class="skill-icon mb-3">
-                                        <i class="fas fa-paint-brush"></i>
-                                    </div>
-                                    <h5 class="card-title">UI/UX Design</h5>
-                                    <p class="card-text">Creating intuitive user interfaces with focus on user experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 shadow">
+                        <div class="card-body">
+                            <i class="fas fa-palette fa-3x text-primary mb-3"></i>
+                            <h4 class="card-title">UI/UX Design</h4>
+                            <p class="card-text">Figma, Adobe XD, Wireframing, Prototyping, User Research</p>
+                            <div class="skill-bar mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Intermediate</span>
+                                    <span>75%</span>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="card skill-card h-100 text-center">
-                                <div class="card-body">
-                                    <div class="skill-icon mb-3">
-                                        <i class="fas fa-mobile-alt"></i>
-                                    </div>
-                                    <h5 class="card-title">Responsive Design</h5>
-                                    <p class="card-text">Ensuring websites work perfectly on all devices and screen sizes.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <div class="card skill-card h-100 text-center">
-                                <div class="card-body">
-                                    <div class="skill-icon mb-3">
-                                        <i class="fas fa-bolt"></i>
-                                    </div>
-                                    <h5 class="card-title">Performance</h5>
-                                    <p class="card-text">Optimizing websites for fast loading and smooth performance.</p>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" style="width: 75%"></div>
                                 </div>
                             </div>
                         </div>
@@ -266,179 +193,155 @@ I’m a computer science graduate specializing in web development and backend sy
             </div>
         </div>
     </section>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collins Mupalia | Portfolio</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- ===== HEADER ===== -->
-<header class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center">
-      <!-- PROFILE IMAGE -->
-      <img src="profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle profile-img">
-    </div>
-    <div class="col-md-8">
-      <h1 class="fw-bold">Collins Mupalia</h1>
-      <p class="lead">Computer Science Graduate | Web & Backend Developer</p>
-    </div>
-  </div>
-</header>
-
-<!-- ===== PROJECTS ===== -->
-<section class="container py-5">
-  <h2 class="text-center mb-4">Projects</h2>
-
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card h-100 shadow">
-        <img src="image.jpeg" class="card-img-top" alt="Project 1">
-        <div class="card-body">
-          <h5 class="card-title">Project One</h5>
-          <p class="card-text">Real project implementation showcasing practical skills.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow">
-        <img src="image1.jpeg" class="card-img-top" alt="Project 2">
-        <div class="card-body">
-          <h5 class="card-title">Project Two</h5>
-          <p class="card-text">Functional system developed with real-world application.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow">
-        <img src="image2.jpeg" class="card-img-top" alt="Project 3">
-        <div class="card-body">
-          <h5 class="card-title">Project Three</h5>
-          <p class="card-text">Professional solution built using modern web technologies.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section py-5">
+    <section id="projects" class="py-5 bg-light">
         <div class="container">
+            <h2 class="text-center mb-5 fw-bold">My <span class="text-primary">Projects</span></h2>
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">My <span class="text-primary">Projects</span></h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Recent work I've completed</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
-                    <div class="card project-card h-100">
-                        <div class="project-image">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
                             <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                                 class="card-img-top" alt="E-commerce Website">
+                                 class="card-img-top project-img" alt="E-Commerce Website">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-outline-light">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">E-commerce Website</h5>
-                            <p class="card-text">A fully responsive online store with shopping cart functionality, built with React and Bootstrap.</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">React</span>
-                                <span class="badge bg-primary">Bootstrap</span>
-                                <span class="badge bg-primary">Node.js</span>
+                            <h5 class="card-title">E-Commerce Website</h5>
+                            <p class="card-text">A fully responsive online store built with React, Node.js, and MongoDB. Features include user authentication, shopping cart, and payment integration.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">React</span>
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-primary">MongoDB</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card project-card h-100">
-                        <div class="project-image">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" 
-                                 class="card-img-top" alt="Finance Dashboard">
+                                 class="card-img-top project-img" alt="Task Management App">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-outline-light">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Finance Dashboard</h5>
-                            <p class="card-text">Interactive dashboard for financial data visualization with real-time charts and analytics.</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">JavaScript</span>
-                                <span class="badge bg-primary">Chart.js</span>
-                                <span class="badge bg-primary">API</span>
+                            <h5 class="card-title">Task Management App</h5>
+                            <p class="card-text">A productivity application with drag-and-drop functionality, real-time updates, and team collaboration features.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">Vue.js</span>
+                                <span class="badge bg-primary me-1">Express</span>
+                                <span class="badge bg-primary">Socket.io</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card project-card h-100">
-                        <div class="project-image">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
                             <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
-                                 class="card-img-top" alt="Travel Blog">
+                                 class="card-img-top project-img" alt="Portfolio Website">
                             <div class="project-overlay">
-                                <a href="#" class="btn btn-outline-light">View Details</a>
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Travel Blog</h5>
-                            <p class="card-text">A beautiful, responsive travel blog with image galleries, maps, and social sharing features.</p>
-                            <div class="project-tags">
-                                <span class="badge bg-primary">HTML/CSS</span>
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p class="card-text">A modern portfolio template using Bootstrap and JavaScript with responsive design and smooth animations.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">HTML/CSS</span>
+                                <span class="badge bg-primary me-1">Bootstrap</span>
                                 <span class="badge bg-primary">JavaScript</span>
-                                <span class="badge bg-primary">Bootstrap</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">View All Projects</a>
+            <!-- Additional Projects Row -->
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 class="card-img-top project-img" alt="Blog Platform">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Blog Platform</h5>
+                            <p class="card-text">A content management system for bloggers with rich text editor, categories, and comment system.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">PHP</span>
+                                <span class="badge bg-primary me-1">MySQL</span>
+                                <span class="badge bg-primary">Laravel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 class="card-img-top project-img" alt="Weather App">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Weather App</h5>
+                            <p class="card-text">A responsive weather application with location detection, 7-day forecast, and multiple theme options.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">JavaScript</span>
+                                <span class="badge bg-primary me-1">API</span>
+                                <span class="badge bg-primary">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                                 class="card-img-top project-img" alt="Social Media Dashboard">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Dashboard</h5>
+                            <p class="card-text">Analytics dashboard for social media platforms with real-time data visualization and reporting.</p>
+                            <div class="project-tech">
+                                <span class="badge bg-primary me-1">React</span>
+                                <span class="badge bg-primary me-1">Chart.js</span>
+                                <span class="badge bg-primary">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section py-5">
+    <section id="contact" class="py-5">
         <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Get In <span class="text-primary">Touch</span></h2>
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title" data-aos="fade-up">Get In <span class="text-primary">Touch</span></h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's work together</p>
-                </div>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <div class="card contact-card shadow-lg">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow">
                         <div class="card-body p-4 p-md-5">
                             <div class="row">
                                 <div class="col-md-6 mb-4 mb-md-0">
                                     <h4 class="mb-4">Contact Information</h4>
                                     <div class="contact-info mb-4">
                                         <div class="d-flex align-items-center mb-3">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-envelope"></i>
+                                            <div class="contact-icon me-3">
+                                                <i class="fas fa-envelope text-primary"></i>
                                             </div>
                                             <div>
                                                 <h6>Email</h6>
@@ -447,8 +350,8 @@ I’m a computer science graduate specializing in web development and backend sy
                                         </div>
                                         
                                         <div class="d-flex align-items-center mb-3">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-phone"></i>
+                                            <div class="contact-icon me-3">
+                                                <i class="fas fa-phone text-primary"></i>
                                             </div>
                                             <div>
                                                 <h6>Phone</h6>
@@ -457,8 +360,8 @@ I’m a computer science graduate specializing in web development and backend sy
                                         </div>
                                         
                                         <div class="d-flex align-items-center mb-3">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-map-marker-alt"></i>
+                                            <div class="contact-icon me-3">
+                                                <i class="fas fa-map-marker-alt text-primary"></i>
                                             </div>
                                             <div>
                                                 <h6>Location</h6>
@@ -469,16 +372,16 @@ I’m a computer science graduate specializing in web development and backend sy
                                     
                                     <h5 class="mb-3">Connect with me</h5>
                                     <div class="social-icons">
-                                        <a href="https://wa.me/+1234567890?text=Hello%20Collins%20Mupalia" class="social-icon whatsapp" target="_blank">
+                                        <a href="https://wa.me/+254-703715677?text=Hello%20Collins%20Mupalia" class="social-icon whatsapp" target="_blank" title="WhatsApp">
                                             <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="https://github.com" class="social-icon github" target="_blank">
+                                        <a href="https://github.com/collinsmupalia" class="social-icon github" target="_blank" title="GitHub">
                                             <i class="fab fa-github"></i>
                                         </a>
-                                        <a href="https://linkedin.com" class="social-icon linkedin" target="_blank">
+                                        <a href="https://linkedin.com/in/collinsmupalia" class="social-icon linkedin" target="_blank" title="LinkedIn">
                                             <i class="fab fa-linkedin-in"></i>
                                         </a>
-                                        <a href="https://twitter.com" class="social-icon twitter" target="_blank">
+                                        <a href="https://twitter.com/collinsmupalia" class="social-icon twitter" target="_blank" title="Twitter">
                                             <i class="fab fa-twitter"></i>
                                         </a>
                                     </div>
@@ -513,24 +416,24 @@ I’m a computer science graduate specializing in web development and backend sy
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-4">
+    <footer class="bg-dark text-white py-4">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">&copy; <span id="currentYear"></span> Collins Mupalia. All Rights Reserved.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Collins Mupalia. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="footer-social">
                         <a href="https://wa.me/+1234567890?text=Hello%20Collins%20Mupalia" class="footer-social-icon" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://github.com" class="footer-social-icon" target="_blank">
+                        <a href="https://github.com/collinsmupalia" class="footer-social-icon" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com" class="footer-social-icon" target="_blank">
+                        <a href="https://linkedin.com/in/collinsmupalia" class="footer-social-icon" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://twitter.com" class="footer-social-icon" target="_blank">
+                        <a href="https://twitter.com/collinsmupalia" class="footer-social-icon" target="_blank">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
@@ -539,23 +442,10 @@ I’m a computer science graduate specializing in web development and backend sy
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="btn btn-primary">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
-    <!-- Custom JavaScript -->
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
