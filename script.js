@@ -1,170 +1,112 @@
-// Custom JavaScript for Collins Mupalia Portfolio
+// ===========================================
+// JavaScript for Collins Mupalia Portfolio
+// ===========================================
 
+// Initialize AOS Animation Library
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+});
+
+// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Collins Mupalia Portfolio loaded');
-    
     // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
     
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Back to top button
-        const backToTop = document.querySelector('.back-to-top');
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-    
-    // CV Button functionality
-    const cvButtons = document.querySelectorAll('a[download]');
-    cvButtons.forEach(button => {
-        if (button.href.includes('CV_Collins_Mupalia.pdf')) {
-            button.addEventListener('click', function(e) {
-                // Check if file exists
-                fetch('CV_Collins_Mupalia.pdf')
-                    .then(response => {
-                        if (!response.ok) {
-                            // Create a simple PDF if file doesn't exist
-                            e.preventDefault();
-                            createSampleCV();
-                        }
-                    })
-                    .catch(() => {
-                        // Create a simple PDF if file doesn't exist
-                        e.preventDefault();
-                        createSampleCV();
-                    });
-            });
-        }
-    });
-    
-    // Function to create sample CV
-    function createSampleCV() {
-        // Create a simple text file as CV
-        const cvContent = `
-            COLLINS MUPALIA
-            ====================
+    // CV Download Button Functionality
+    const downloadCVButton = document.getElementById('downloadCV');
+    if (downloadCVButton) {
+        downloadCVButton.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            Professional Web Developer
-            Email: collinsmupalia123@gmail.com
-            Phone: 0703715677
-            Location: Port Moresby, Papua New Guinea
+            // Create a sample CV content
+            const cvContent = `
+                COLLINS MUPALIA - PORTFOLIO CV
+                
+                ============================================
+                CONTACT INFORMATION
+                ============================================
+                Name: Collins Mupalia
+                Email: collinsmupalia123@gmail.com 
+                Phone: +(254) 703715677
+                Location: Nairobi, Kenya
+                Website: https://collinsmupalia.com
+                
+                ============================================
+                PROFESSIONAL SUMMARY
+                ============================================
+                Experienced Frontend Developer with over 3 years of expertise 
+                in building responsive, user-friendly web applications. 
+                Skilled in HTML5, CSS3, JavaScript, React.js, and Bootstrap.
+                Passionate about creating clean, efficient code and 
+                exceptional user experiences.
+                
+                ============================================
+                TECHNICAL SKILLS
+                ============================================
+                • Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap
+                • Tools: Git, VS Code, Figma, Adobe Creative Suite
+                • Methodologies: Responsive Design, Mobile-First, Agile/Scrum
+                • Cybersecurity 
+                • Database Design
+                
+                ============================================
+                WORK EXPERIENCE
+                ============================================
+                Frontend Developer | Tech Solutions Inc. | 2021 - Present
+                - Developed responsive web applications using React and Bootstrap
+                - Improved website performance by 40% through optimization techniques
+                - Collaborated with UI/UX designers to implement pixel-perfect designs
+                
+                Web Developer | Digital Creations | 2020 - 2021
+                - Built and maintained client websites using HTML, CSS, JavaScript
+                - Implemented responsive designs for mobile and desktop devices
+                - Provided technical support and website maintenance
+                
+                ============================================
+                EDUCATION
+                ============================================
+                Diploma in Computer Science 
+                Baringo National Polytechnic | 2017 - 2020
+                Bachelor of Computer Science
+                University of Nairobi | 2021 - 2025
+                
+                ============================================
+                PROJECTS
+                ============================================
+                • E-commerce Website: Built with React and Node.js
+                • Finance Dashboard: Interactive data visualization with Chart.js
+                • Travel Blog: Responsive blog with image galleries and maps
+                
+                ============================================
+                CERTIFICATIONS
+                ============================================
+                • Frontend Web Development Certification - Code Academy
+                • React.js Specialist - Udemy
+                • Responsive Web Design - FreeCodeCamp
+            `;
             
-            SUMMARY
-            ----------
-            Passionate full-stack web developer with 3+ years of experience creating dynamic, 
-            responsive websites and web applications. Specialized in turning ideas into 
-            beautiful, functional digital experiences.
+            // Create a Blob with the CV content
+            const blob = new Blob([cvContent], { type: 'text/plain' });
             
-            SKILLS
-            ----------
-            • HTML/CSS: 95%
-            • JavaScript: 85%
-            • React: 80%
-            • UI/UX Design: 90%
-            • Bootstrap: 95%
-            • Node.js: 75%
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Collins_Mupalia_CV.txt';
             
-            EXPERIENCE
-            ----------
-            • 15+ Projects Completed
-            • 8+ Happy Clients
-            • 100% Client Satisfaction
+            // Append to the body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
             
-            CONTACT
-            ----------
-            Portfolio: https://collinsmupalia123-png.github.io/my-portfolio-/
-            Email: collinsmupalia123@gmail.com
-            Phone: 0703715677
-            
-            © ${new Date().getFullYear()} Collins Mupalia. All rights reserved.
-        `;
-        
-        const blob = new Blob([cvContent], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'CV_Collins_Mupalia.txt';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-        
-        alert('CV downloaded successfully! For a complete PDF version, please contact me directly.');
-    }
-    
-    // Animate achievement counters
-    function animateCounters() {
-        const counters = document.querySelectorAll('.achievement-number');
-        const speed = 200;
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            const increment = target / speed;
-            let count = 0;
-            
-            const updateCounter = () => {
-                if (count < target) {
-                    count += increment;
-                    counter.textContent = Math.floor(count);
-                    setTimeout(updateCounter, 10);
-                } else {
-                    counter.textContent = target;
-                }
-            };
-            
-            // Start counter when in viewport
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateCounter();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(counter);
+            // Show success message
+            showNotification('CV downloaded successfully!', 'success');
         });
     }
     
-    // Initialize counters
-    animateCounters();
-    
-    // Animate skill bars
-    function animateSkillBars() {
-        const skillBars = document.querySelectorAll('.progress-animated');
-        
-        skillBars.forEach(bar => {
-            const width = bar.getAttribute('data-width') + '%';
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 300);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(bar);
-        });
-    }
-    
-    // Initialize skill bars
-    animateSkillBars();
-    
-    // Contact form submission
+    // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -176,121 +118,113 @@ document.addEventListener('DOMContentLoaded', function() {
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
             
-            // Validation
+            // Basic validation
             if (!name || !email || !subject || !message) {
-                showAlert('Please fill in all required fields.', 'danger');
+                showNotification('Please fill in all fields', 'error');
                 return;
             }
             
-            // Email validation
+            // Email validation regex
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                showAlert('Please enter a valid email address.', 'danger');
+                showNotification('Please enter a valid email address', 'error');
                 return;
             }
             
-            // Simulate form submission
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
-            submitBtn.disabled = true;
+            // In a real application, you would send the data to a server here
+            // For demo purposes, we'll just show a success message
             
             // Simulate API call
             setTimeout(() => {
-                // In a real application, you would send the data to a server here
-                console.log('Form submitted:', { name, email, subject, message });
-                
-                // Show success message
-                showAlert('Thank you for your message! I will get back to you within 24 hours.', 'success');
+                showNotification('Message sent successfully! I will get back to you soon.', 'success');
                 
                 // Reset form
                 contactForm.reset();
                 
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Send email notification (in a real app, this would be server-side)
-                sendEmailNotification(name, email, subject, message);
-            }, 1500);
+                // Log the form data (in a real app, this would be sent to a server)
+                console.log('Contact Form Submission:', { name, email, subject, message });
+            }, 1000);
         });
     }
     
-    // Show alert function
-    function showAlert(message, type) {
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
-        alertDiv.innerHTML = `
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
-        
-        // Insert after the form
-        const form = document.getElementById('contactForm');
-        if (form) {
-            form.parentNode.insertBefore(alertDiv, form.nextSibling);
-            
-            // Remove alert after 5 seconds
-            setTimeout(() => {
-                if (alertDiv.parentNode) {
-                    alertDiv.remove();
-                }
-            }, 5000);
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Show/hide back to top button based on scroll position
+    window.addEventListener('scroll', function() {
+        // Back to top button visibility
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
         }
-    }
+        
+        // Navbar background on scroll
+        const navbar = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        // Update active navigation link based on scroll position
+        updateActiveNavLink();
+    });
     
-    // Simulate email notification
-    function sendEmailNotification(name, email, subject, message) {
-        // In a real application, this would be a server-side API call
-        console.log('Email notification would be sent:', {
-            to: 'collinsmupalia123@gmail.com',
-            from: email,
-            subject: `New Contact Form: ${subject}`,
-            body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    // Back to top button functionality
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
+            // Skip if it's just "#"
             if (href === '#') return;
             
             e.preventDefault();
-            const targetId = href;
-            const targetElement = document.querySelector(targetId);
             
+            const targetElement = document.querySelector(href);
             if (targetElement) {
-                // Close mobile menu if open
-                const navbarCollapse = document.querySelector('.navbar-collapse.show');
-                if (navbarCollapse) {
-                    const navbarToggler = document.querySelector('.navbar-toggler');
-                    navbarToggler.click();
-                }
+                // Calculate offset for fixed navbar
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
                 
+                // Smooth scroll to target
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Update URL hash without scrolling
+                history.pushState(null, null, href);
             }
         });
     });
     
-    // Add active class to current section in navigation
+    // Update active navigation link based on scroll position
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
         
         let currentSectionId = '';
         
+        // Find the current section in view
         sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= 150 && rect.bottom >= 150) {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
                 currentSectionId = section.id;
             }
         });
         
+        // Update active class on nav links
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSectionId}`) {
@@ -299,103 +233,76 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    window.addEventListener('scroll', updateActiveNavLink);
-    updateActiveNavLink();
-    
-    // Add animation to elements when they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.fade-in');
+    // Notification function
+    function showNotification(message, type = 'info') {
+        // Remove any existing notifications
+        const existingNotification = document.querySelector('.custom-notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
         
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-    
-    // Initialize animations
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll();
-    
-    // Social media links validation
-    const socialLinks = document.querySelectorAll('.social-icon, .social-icon-footer');
-    socialLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.href === '#' || !this.href.includes('http')) {
-                e.preventDefault();
-                alert('This social media link is not configured yet. Please check back soon!');
-            }
-        });
-    });
-    
-    // Project cards hover effect
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-15px)';
-        });
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `custom-notification alert alert-${type === 'error' ? 'danger' : 'success'}`;
+        notification.textContent = message;
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // Initialize tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-    
-    // Floating elements animation
-    function animateFloatingElements() {
-        const floatingElements = document.querySelectorAll('.floating-element');
-        floatingElements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.5}s`;
-        });
+        // Style the notification
+        notification.style.position = 'fixed';
+        notification.style.top = '20px';
+        notification.style.right = '20px';
+        notification.style.zIndex = '9999';
+        notification.style.padding = '15px 20px';
+        notification.style.borderRadius = '5px';
+        notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        notification.style.maxWidth = '300px';
+        notification.style.animation = 'slideIn 0.3s ease-out';
+        
+        // Add to document
+        document.body.appendChild(notification);
+        
+        // Remove after 5 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 5000);
+        
+        // Add CSS animations if not already present
+        if (!document.querySelector('#notification-styles')) {
+            const style = document.createElement('style');
+            style.id = 'notification-styles';
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
     }
     
-    animateFloatingElements();
-    
-    // Add loading animation
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-        
-        // Remove loading spinner if exists
-        const loadingSpinner = document.querySelector('.loading-spinner');
-        if (loadingSpinner) {
-            loadingSpinner.style.display = 'none';
-        }
-    });
-    
-    // Initialize with a loading state
-    document.body.classList.add('loading');
-    
-    // Add click-to-call functionality
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (!confirm('Would you like to call Collins Mupalia?')) {
-                e.preventDefault();
-            }
+    // Social media icons click tracking (optional)
+    document.querySelectorAll('.social-icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            const platform = this.className.includes('whatsapp') ? 'WhatsApp' :
+                           this.className.includes('github') ? 'GitHub' :
+                           this.className.includes('linkedin') ? 'LinkedIn' :
+                           this.className.includes('twitter') ? 'Twitter' :
+                           this.className.includes('facebook') ? 'Facebook' :
+                           this.className.includes('instagram') ? 'Instagram' : 'Social Media';
+            
+            console.log(`${platform} icon clicked`);
+            // In a real application, you could send analytics data here
         });
     });
     
-    // Add click-to-email functionality
-    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-    emailLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (!confirm('Would you like to email Collins Mupalia?')) {
-                e.preventDefault();
-            }
-        });
-    });
-});
-
-// Add beforeunload event to show loading state
-window.addEventListener('beforeunload', function() {
-    document.body.classList.add('loading');
+    // Initialize with active nav link
+    updateActiveNavLink();
 });
